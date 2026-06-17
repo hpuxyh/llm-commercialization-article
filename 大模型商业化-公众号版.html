@@ -85,10 +85,6 @@
   <section class="metrics">
     <section class="metric green"><span>事实锚点</span><strong>120 万亿 token/日</strong><em>火山引擎公开口径，用来判断调用规模。</em></section>
     <section class="metric green"><span>事实锚点</span><strong>3.45 亿 MAU</strong><em>QuestMobile 披露的豆包 2026Q1 月活规模。</em></section>
-    <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>覆盖率约 17%，缺口约 1120 亿。</em></section>
-    <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>覆盖率升至约 40%，但缺口仍约 1450 亿。</em></section>
-    <section class="metric amber"><span>四条腿</span><strong>150 + 420 + 220 + 160 亿</strong><em>订阅、API、广告、Agent 抽佣的成熟期拆分。</em></section>
-    <section class="metric amber"><span>自我蚕食税</span><strong>20% → 8%</strong><em>Agent 直达会压缩投流链路，解释豆包为什么更克制。</em></section>
   </section>
 
   <p>大模型不是一门单独靠模型收费就能闭环的生意，它更像下一代互联网入口。分析豆包、千问、DeepSeek，只看模型能力或 API 价格都不够，真正要摊开的是三本账：模型账本、入口账本、旧业务账本。</p>
@@ -131,6 +127,10 @@
   <rect x="152" y="438" width="13" height="13" rx="3" fill="#1D9E75"/><text class="fxs" x="172" y="448" fill="#555">收入</text>
   <rect x="242" y="438" width="13" height="13" rx="3" fill="#E27D5A"/><text class="fxs" x="262" y="448" fill="#555">缺口 / 仍需集团账本支撑</text>
 </svg><figcaption>图 1　模型账本的核心矛盾：收入覆盖率可能变好，但绝对缺口仍可能扩大</figcaption></figure>
+  <section class="metrics">
+    <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>覆盖率约 17%，缺口约 1120 亿。</em></section>
+    <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>覆盖率升至约 40%，但缺口仍约 1450 亿。</em></section>
+  </section>
   <p>图里的数字不是为了还原某一家公司真实损益，而是为了呈现一个结构性矛盾：公开数据已经能证明豆包具备超级应用级别的使用规模，但模型收入并不会自动覆盖模型成本。收入端取决于付费化比例和加权单价，成本端则随着推理、多模态和 Agent 多步调用继续上行。</p>
   <p>在一个偏乐观的基准情景里，2026 年把订阅、API、广告试水和少量企业服务合在一起，收入约 230 亿；成本端把算力资本开支/折旧、训练迭代、推理服务、研发和获客运营合在一起，约 1350 亿，缺口约 1120 亿。到 2027-2028 年，四条腿逐步成熟后，收入可能抬到约 950 亿，但成本也可能随 token、多模态和 Agent 调用扩张到约 2400 亿，缺口仍约 1450 亿。</p>
   <section class="callout red"><p><strong>反常识就在这里：</strong>收入覆盖率从约 17% 升到约 40%，看起来在改善；但绝对缺口从约 1120 亿扩大到约 1450 亿，压力反而更重。</p></section>
@@ -301,6 +301,9 @@
   <rect x="218" y="256" width="12" height="12" rx="3" fill="#d8d6cf"/><text class="fxs" x="235" y="263" fill="#6b6b6b">基础盘（订阅·API）</text>
   <rect x="408" y="256" width="12" height="12" rx="3" fill="#5dcaa5"/><text class="fxs" x="425" y="263" fill="#6b6b6b">增长主力（广告·抽佣）</text>
 </svg><figcaption>图 4　四条变现腿的基准情景：约 950 亿成熟期收入来自订阅、API、广告和 Agent 抽佣</figcaption></figure>
+  <section class="metrics">
+    <section class="metric amber"><span>四条腿</span><strong>150 + 420 + 220 + 160 亿</strong><em>订阅、API、广告、Agent 抽佣的成熟期拆分。</em></section>
+  </section>
   <p>Agent 抽佣的想象空间更大，是因为它挂在 GMV 上，而不是挂在 token 上。但这并不意味着平台能把全部 GMV 都算成新增收入。真正的收入要扣掉履约成本、商家补贴、支付和售后成本，更重要的是，还要扣掉从自己旧业务里“搬运”过来的那部分收入。</p>
   <p>判断 Agent 抽佣，关键不是“能促成多少 GMV”，而是净贡献：这笔成交是不是新增的，原来会不会在平台旧链路里发生，旧链路本来能赚多少广告和佣金，Agent 直达后还剩多少收费空间。对有电商和广告基本盘的平台来说，Agent 可能既是新收入，也是旧收入的压缩器。</p>
   <p>如果沿用一个偏乐观的基准情景，四条腿成熟期可以拆成约 950 亿：订阅约 150 亿、API 约 420 亿、AI 答案广告约 220 亿、Agent 抽佣约 160 亿。这组数不对应公司财报预测，只用来呈现量级关系：<strong>API 仍是短期大头，广告是承接旧预算的兜底项，Agent 抽佣天花板最高但起量最慢。</strong></p>
@@ -430,6 +433,9 @@
   <rect x="60" y="296" width="600" height="46" rx="12" fill="#fcecea" stroke="#e7a39c"/>
   <text class="fs" x="360" y="324" text-anchor="middle" fill="#8a1f1f">差额约 12 个百分点（¥120）＝自我蚕食税：投流环节流失，竞价加权只补回约 3%</text>
 </svg><figcaption>图 8　自我蚕食税的一个数字例子：同一笔订单，Agent 直达把可收费环节从约 20% 压到约 8%</figcaption></figure>
+  <section class="metrics">
+    <section class="metric amber"><span>自我蚕食税</span><strong>20% → 8%</strong><em>Agent 直达会压缩投流链路，解释豆包为什么更克制。</em></section>
+  </section>
   <p>一笔 ¥1000 的订单，如果走传统“逛”的链路，平台可能拿到约 15% 的投流广告加约 5% 的基础佣金，合计约 20%；如果 Agent 替用户直接比价下单，省掉了“逛”，原来约 15% 的投流大部分消失，平台只能靠约 5% 的基础佣金，再加上为“被优先推荐”新设的约 3% 竞价加权，合计约 8%。中间约 12 个百分点的差额，就是平台推进 Agent 时要消化的自我蚕食税。</p>
   <section class="data-box">
     <strong>测算说明 6：自我蚕食税</strong>
