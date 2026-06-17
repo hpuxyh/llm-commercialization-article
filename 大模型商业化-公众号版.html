@@ -43,6 +43,14 @@
   .mini.red{background:#fff0ed;border-color:#efc7be;}
   .mini strong{display:block;margin-bottom:6px;font-size:16px;line-height:1.6;color:#2a2a2a;}
   .mini span{display:block;font-size:14.5px;line-height:1.8;color:#4b453d;}
+  .metrics{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:24px 0;}
+  .metric{padding:15px 15px;border-radius:13px;border:1px solid #e6dece;background:#fffdf8;}
+  .metric.green{background:#f1faf5;border-color:#cfe8dc;}
+  .metric.amber{background:#fff6e4;border-color:#ecd7a9;}
+  .metric.red{background:#fff0ed;border-color:#efc7be;}
+  .metric span{display:block;margin-bottom:4px;font-size:13px;line-height:1.55;color:#746e64;font-weight:700;}
+  .metric strong{display:block;font-size:22px;line-height:1.3;color:#111;letter-spacing:0;}
+  .metric em{display:block;margin-top:5px;font-style:normal;font-size:13px;line-height:1.65;color:#5b554d;}
   .data-box{margin:20px 0;padding:16px 17px;border-radius:13px;background:#f8fbfa;border:1px solid #d8ebe4;border-left:5px solid var(--teal);}
   .data-box strong{display:block;margin-bottom:8px;font-size:15px;color:var(--teal);}
   .data-box p{margin:7px 0;font-size:13.5px;line-height:1.75;color:#5b554d;}
@@ -60,6 +68,7 @@
     h1{font-size:27px;}
     h2{font-size:21px;}
     p{font-size:16.5px;}
+    .metrics{grid-template-columns:1fr;}
     .fig{margin-left:-2px;margin-right:-2px;padding:14px 10px 12px;}
     .fig svg{min-width:650px;}
   }
@@ -71,7 +80,16 @@
   <h1>大模型平台商业化：<br>从模型账本到入口账本</h1>
   <p class="deck">千问已经把“帮我点杯奶茶”做成了交易型 Agent 的样板：提出需求、比较选项、调用支付、完成履约。豆包则更克制，公开叙事仍主要围绕内容、搜索、模型能力和增值服务。这个差异不能只用“谁技术更强”解释，真正要看的，是每个平台背后的收入结构、成本结构和旧业务约束。更深一层看，互联网商业正在从“被搜索”走向“被 AI 提及”，再走向“被 Agent 选中并成交”。</p>
 
-  <section class="callout amber"><p><strong>先把口径说清楚：</strong><br>这篇文章不试图还原豆包或字节的真实损益表。字节并不单独披露豆包独立收入、成本和亏损；凡是官方或权威机构有公开数据的地方，本文直接引用来源；凡是没有披露的数据，只写公式、变量和适用边界，不写成确定金额。</p></section>
+  <section class="callout green"><p><strong>先给结论：</strong><br>大模型平台的商业化不是“卖会员能不能赚钱”这么简单，而是一道入口账本题：模型账本短期很难闭环，所以平台必须把收入从“卖 token”推到“卖决策入口”和“卖交易结果”。</p></section>
+
+  <section class="metrics">
+    <section class="metric green"><span>事实锚点</span><strong>120 万亿 token/日</strong><em>火山引擎公开口径，用来判断调用规模。</em></section>
+    <section class="metric green"><span>事实锚点</span><strong>3.45 亿 MAU</strong><em>QuestMobile 披露的豆包 2026Q1 月活规模。</em></section>
+    <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>覆盖率约 17%，缺口约 1120 亿。</em></section>
+    <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>覆盖率升至约 40%，但缺口仍约 1450 亿。</em></section>
+    <section class="metric amber"><span>四条腿</span><strong>150 + 420 + 220 + 160 亿</strong><em>订阅、API、广告、Agent 抽佣的基准情景拆分。</em></section>
+    <section class="metric amber"><span>自我蚕食税</span><strong>20% → 8%</strong><em>Agent 直达会压缩投流链路，解释豆包为什么更克制。</em></section>
+  </section>
 
   <figure class="fig">
 <svg class="f" viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大模型商业化的七层逻辑体系">
@@ -123,7 +141,7 @@
   <text class="ft" x="360" y="486" text-anchor="middle" fill="#7a4f0b">主命题：从卖模型，到卖入口、卖决策、卖结果</text>
 </svg><figcaption>图 0　整体逻辑体系：用户任务链变短之后，平台收入、成本结构、竞争格局和用户信任都会被重排</figcaption></figure>
 
-  <p>后面的分析会把事实、假设和判断分开处理：事实只来自可查来源；收入、成本、抽佣率这类未披露项目，只作为变量进入公式；真正的结论不靠某一个测算数字成立，而靠“用户入口迁移 → 收费对象变化 → 平台旧业务约束 → 用户信任边界”这条逻辑链成立。专业读者最需要警惕的，不是测算数字本身，而是把测算当成事实；所以本文会把可查数字当成事实锚点，把未披露项目留在公式里，让读者能看清每一步判断的边界。</p>
+  <p>后面的分析只围绕这 6 个数字展开：先看模型账本为什么打不平，再看钱为什么会从搜索广告迁移到 AI 答案广告和 Agent 抽佣，最后解释为什么千问更积极、豆包更克制、DeepSeek 更适合基础设施定位。事实、假设和判断会分开处理：事实来自可查来源；未披露项目用公式和基准情景测算；战略判断则来自“用户入口迁移 → 收费对象变化 → 平台旧业务约束 → 用户信任边界”这条推理链。</p>
 
   <section class="data-box">
     <strong>数据口径：事实、假设和推断要分开看</strong>
@@ -193,32 +211,38 @@
   <p>大模型的财务难点不在“有没有人用”，而在“使用越深，成本越硬”。一次普通问答、一次长上下文推理、一次图片生成、一次工具调用和一次 Agent 执行，背后都是不同强度的算力、带宽、存储和工程成本。用户规模扩大以后，平台首先得到的往往不是利润，而是更大的推理账单。</p>
   <p>这笔账也不能只理解为“训练一次大模型花多少钱”。训练投入只是起点，真正持续发生的是推理成本、模型迭代、上下文变长、多模态生成、Agent 多步调用、带宽存储、工程研发和获客运营。尤其是 Agent 场景，一次“帮我买”背后可能包含搜索、比价、读取评价、调用工具、确认支付、生成解释等多轮推理；用户感觉路径变短，平台背后的调用链反而变长。</p>
   <figure class="fig">
-<svg class="f" viewBox="0 0 700 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="模型账本的收入成本公式">
-  <text class="fh" x="350" y="34" text-anchor="middle" fill="#1a1a1a">模型账本：官方数据能证明规模，但不能直接推出损益</text>
-  <text class="fxs" x="350" y="58" text-anchor="middle" fill="#6b6b6b">豆包/字节未披露独立收入、成本和亏损；可靠写法应是公式模型</text>
+<svg class="f" viewBox="0 0 700 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="收入成本缺口测算：2026 与 2027-2028">
+  <text class="fh" x="350" y="32" text-anchor="middle" fill="#1a1a1a">模型账本的核心矛盾：覆盖率变好，绝对缺口仍可能扩大</text>
+  <text class="fxs" x="350" y="56" text-anchor="middle" fill="#6b6b6b">单位：亿元；基准情景测算，非公司披露数据</text>
 
-  <rect x="38" y="92" width="190" height="96" rx="14" fill="#fffdf8" stroke="#e6dece"/>
-  <text class="ft" x="133" y="122" text-anchor="middle" fill="#4a473f">公开规模锚点</text>
-  <text class="fnum" x="133" y="151" text-anchor="middle" fill="#1a1a1a">120 万亿 token/日</text>
-  <text class="fxs" x="133" y="174" text-anchor="middle" fill="#777">火山引擎公布口径</text>
+  <line x1="78" y1="370" x2="660" y2="370" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="374" text-anchor="end" fill="#999">0</text>
+  <line x1="78" y1="306" x2="660" y2="306" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="310" text-anchor="end" fill="#999">500</text>
+  <line x1="78" y1="242" x2="660" y2="242" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="246" text-anchor="end" fill="#999">1000</text>
+  <line x1="78" y1="178" x2="660" y2="178" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="182" text-anchor="end" fill="#999">1500</text>
+  <line x1="78" y1="114" x2="660" y2="114" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="118" text-anchor="end" fill="#999">2000</text>
+  <line x1="78" y1="50" x2="660" y2="50" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="54" text-anchor="end" fill="#999">2500</text>
 
-  <rect x="255" y="92" width="190" height="96" rx="14" fill="#fffdf8" stroke="#e6dece"/>
-  <text class="ft" x="350" y="122" text-anchor="middle" fill="#4a473f">用户规模锚点</text>
-  <text class="fnum" x="350" y="151" text-anchor="middle" fill="#1a1a1a">3.45 亿 MAU</text>
-  <text class="fxs" x="350" y="174" text-anchor="middle" fill="#777">QuestMobile 2026Q1</text>
+  <rect x="150" y="340.6" width="160" height="29.4" fill="#1D9E75"/>
+  <rect x="150" y="197.2" width="160" height="143.4" fill="#E27D5A"/>
+  <text class="fnum" x="230" y="186" text-anchor="middle" fill="#1a1a1a">总成本 1350</text>
+  <text class="fs" x="230" y="260" text-anchor="middle" fill="#fff">缺口</text>
+  <text class="ft" x="230" y="284" text-anchor="middle" fill="#fff">1120</text>
+  <text class="fs" x="230" y="358" text-anchor="middle" fill="#fff">收入 230</text>
 
-  <rect x="472" y="92" width="190" height="96" rx="14" fill="#fffdf8" stroke="#e6dece"/>
-  <text class="ft" x="567" y="122" text-anchor="middle" fill="#4a473f">价格锚点</text>
-  <text class="fnum" x="567" y="151" text-anchor="middle" fill="#1a1a1a">按官方价格页</text>
-  <text class="fxs" x="567" y="174" text-anchor="middle" fill="#777">输入/输出/缓存分开算</text>
+  <rect x="410" y="248.4" width="160" height="121.6" fill="#1D9E75"/>
+  <rect x="410" y="62.8" width="160" height="185.6" fill="#E27D5A"/>
+  <text class="fnum" x="490" y="52" text-anchor="middle" fill="#1a1a1a">总成本 2400</text>
+  <text class="fs" x="490" y="145" text-anchor="middle" fill="#fff">缺口</text>
+  <text class="ft" x="490" y="168" text-anchor="middle" fill="#fff">1450</text>
+  <text class="fs" x="490" y="314" text-anchor="middle" fill="#fff">收入 950</text>
 
-  <rect x="62" y="230" width="576" height="66" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="350" y="258" text-anchor="middle" fill="#0f6e56">API 收入 = 日 token 量 × 365 ÷ 1,000,000 × 加权单价 × 付费化比例</text>
-  <text class="fs" x="350" y="282" text-anchor="middle" fill="#0a4a3a">加权单价取决于模型、输入/输出占比、上下文长度、缓存命中率和折扣</text>
+  <text class="ft" x="230" y="398" text-anchor="middle" fill="#1a1a1a">2026 基准情景</text>
+  <text class="fs" x="230" y="420" text-anchor="middle" fill="#555">收入覆盖率约 17%</text>
+  <text class="ft" x="490" y="398" text-anchor="middle" fill="#1a1a1a">2027-2028 成熟期</text>
+  <text class="fs" x="490" y="420" text-anchor="middle" fill="#555">收入覆盖率约 40%</text>
 
-  <rect x="62" y="320" width="576" height="66" rx="14" fill="#fcecea" stroke="#e7a39c"/>
-  <text class="ft" x="350" y="348" text-anchor="middle" fill="#8a1f1f">成本 = 推理算力 + 训练摊销 + 带宽存储 + 工程研发 + 获客运营</text>
-  <text class="fs" x="350" y="372" text-anchor="middle" fill="#a8453a">成本项未被公司披露，不能写成官方亏损，只能做敏感性测算</text>
+  <rect x="152" y="438" width="13" height="13" rx="3" fill="#1D9E75"/><text class="fxs" x="172" y="448" fill="#555">收入</text>
+  <rect x="242" y="438" width="13" height="13" rx="3" fill="#E27D5A"/><text class="fxs" x="262" y="448" fill="#555">缺口 / 仍需集团账本支撑</text>
 </svg><figcaption>图 2　模型账本的正确写法：官方数据能证明规模，但豆包独立损益只能用变量公式推演</figcaption></figure>
   <p>这张图的关键不是给出一个“豆包亏多少”的确定答案，而是说明怎么计算才合理。公开数据能够证明豆包有很大的使用规模和用户规模，但收入要看多少调用真正付费、按什么加权单价计费；成本则涉及推理、训练、带宽、存储、研发和获客，公司没有逐项披露。</p>
   <p>所以专业写法不是直接断言“豆包一年亏多少”，而是：在官方 token 量和官方价格页基础上，建立 API 收入公式；在公司未披露成本的情况下，只能做成本敏感性分析。只要任何一个关键变量变化，结论都会变化。</p>
@@ -270,10 +294,10 @@
   <text class="fs" x="190" y="284" text-anchor="middle" fill="#9a6a14">老盘子 · 关键词预算</text>
   <rect x="300" y="232" width="160" height="70" rx="12" fill="#e1f5ee" stroke="#5dcaa5"/>
   <text class="ft" x="380" y="260" text-anchor="middle" fill="#0f6e56">AI 答案广告</text>
-  <text class="fs" x="380" y="284" text-anchor="middle" fill="#0a4a3a">大模型平台广告</text>
+  <text class="fs" x="380" y="284" text-anchor="middle" fill="#0a4a3a">成熟期测算约 220 亿</text>
   <rect x="490" y="232" width="160" height="70" rx="12" fill="#e1f5ee" stroke="#5dcaa5"/>
   <text class="ft" x="570" y="260" text-anchor="middle" fill="#0f6e56">Agent 抽佣</text>
-  <text class="fs" x="570" y="284" text-anchor="middle" fill="#0a4a3a">挂 GMV · 结果分成</text>
+  <text class="fs" x="570" y="284" text-anchor="middle" fill="#0a4a3a">成熟期测算约 160 亿</text>
   <line x1="272" y1="267" x2="298" y2="267" stroke="#d85a30" stroke-width="2.2" marker-end="url(#ar1)"/>
   <line x1="462" y1="267" x2="488" y2="267" stroke="#d85a30" stroke-width="2.2" marker-end="url(#ar1)"/>
 
@@ -283,6 +307,7 @@
   <line x1="190" y1="212" x2="190" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
   <line x1="380" y1="212" x2="380" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
   <line x1="570" y1="212" x2="570" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
+  <text class="fxs" x="360" y="320" text-anchor="middle" fill="#6b6b6b">注意：220 亿 / 160 亿是基准情景测算，用来表示量级，不是公司披露收入</text>
 </svg><figcaption>图 3　三级跳双轴迁移图：品牌侧从被搜索、被提及到被买单；平台侧从搜索广告、AI 答案广告到 Agent 抽佣</figcaption></figure>
   <p>这张图是全文题眼。品牌侧有三次迁移：从被搜索，到被 AI 提及，再到被 Agent 买单。平台侧也对应三次迁移：从搜索广告，到 AI 答案广告，再到 Agent 抽佣。所谓“大模型平台广告”，不是凭空创造的新蛋糕，而是旧的搜索、内容、电商广告预算在新入口上的再分配。</p>
   <p>站在平台方视角，“做 GEO”和“做平台广告”其实是同一枚硬币的两面。第三方 GEO 服务商想做的是自然优化：让品牌在 AI 答案里被提及、被引用、被推荐；平台自己不会长期把这套黑箱优化方法白白交出去，因为那会伤害答案可信度。平台更可能做的是把“可见性”产品化：官方品牌数据接入、认证档案、赞助答案、推荐位、品牌解释卡、可标识的商业推荐，以及未来的 Agent 成交分成。换句话说，平台不会去当传统 SEO 代运营，它会把 GEO 想争取的那部分可见性收费化。</p>
