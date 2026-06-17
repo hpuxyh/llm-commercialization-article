@@ -51,9 +51,9 @@
   .metric span{display:block;margin-bottom:4px;font-size:13px;line-height:1.55;color:#746e64;font-weight:700;}
   .metric strong{display:block;font-size:22px;line-height:1.3;color:#111;letter-spacing:0;}
   .metric em{display:block;margin-top:5px;font-style:normal;font-size:13px;line-height:1.65;color:#5b554d;}
-  .data-box{margin:20px 0;padding:16px 17px;border-radius:13px;background:#f8fbfa;border:1px solid #d8ebe4;border-left:5px solid var(--teal);}
-  .data-box strong{display:block;margin-bottom:8px;font-size:15px;color:var(--teal);}
-  .data-box p{margin:7px 0;font-size:13.5px;line-height:1.75;color:#5b554d;}
+  .data-box{margin:16px 0;padding:12px 14px;border-radius:10px;background:#f7f6f2;border:1px solid #e6e0d4;border-left:3px solid #b8d7cc;}
+  .data-box strong{display:block;margin-bottom:6px;font-size:13.5px;color:#4f7f70;}
+  .data-box p{margin:5px 0;font-size:12.8px;line-height:1.72;color:#686157;}
   .data-box b{color:#302b26;}
   .quote{margin:26px 0;padding:19px 20px;border-radius:14px;background:#e6f4ed;color:#0a4a3a;font-size:19px;line-height:1.65;font-weight:800;}
   .small{font-size:14px;color:#6d675d;line-height:1.85;}
@@ -80,25 +80,19 @@
   <h1>亏的是豆包，赚的是字节？<br>大模型商业化真正要算的是入口账</h1>
   <p class="deck">同样一句“帮我点杯奶茶”，千问已经能把需求、推荐、优惠、支付和履约串起来；豆包却明显克制。很多人会把这个差异理解成产品进度不同，但这只是表层。真正的分水岭不是谁先做出 Agent，而是谁承受得起 Agent 对旧收入的冲击。</p>
 
-  <section class="callout green"><p><strong>先给结论：</strong><br>大模型平台的商业化不是“卖会员能不能赚钱”这么简单，而是一道入口账本题：模型账本短期很难闭环，所以平台必须把收入从“卖 token”推到“卖决策入口”和“卖交易结果”。</p></section>
+  <section class="callout green"><p><strong>核心判断：</strong><br>大模型平台的商业化不是“卖会员能不能赚钱”这么简单，而是一道入口账本题：模型账本短期很难闭环，收入重心会从“卖 token”继续推向“卖决策入口”和“卖交易结果”。</p></section>
 
   <section class="metrics">
     <section class="metric green"><span>事实锚点</span><strong>120 万亿 token/日</strong><em>火山引擎公开口径，用来判断调用规模。</em></section>
     <section class="metric green"><span>事实锚点</span><strong>3.45 亿 MAU</strong><em>QuestMobile 披露的豆包 2026Q1 月活规模。</em></section>
     <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>覆盖率约 17%，缺口约 1120 亿。</em></section>
     <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>覆盖率升至约 40%，但缺口仍约 1450 亿。</em></section>
-    <section class="metric amber"><span>四条腿</span><strong>150 + 420 + 220 + 160 亿</strong><em>订阅、API、广告、Agent 抽佣的基准情景拆分。</em></section>
+    <section class="metric amber"><span>四条腿</span><strong>150 + 420 + 220 + 160 亿</strong><em>订阅、API、广告、Agent 抽佣的成熟期拆分。</em></section>
     <section class="metric amber"><span>自我蚕食税</span><strong>20% → 8%</strong><em>Agent 直达会压缩投流链路，解释豆包为什么更克制。</em></section>
   </section>
 
-  <p>这篇文章只想传递一个感知：<strong>大模型不是一门单独靠模型收费就能闭环的生意，它更像下一代互联网入口。</strong>所以分析豆包、千问、DeepSeek，不能只看模型能力，也不能只看 API 价格，而要把三本账摊开：模型账本、入口账本、旧业务账本。</p>
-  <p>多数讨论混乱，是因为把三类问题混在了一起：第一，模型自己能不能赚钱；第二，平台会用什么方式商业化；第三，新商业化会不会打坏自己的旧饭碗。下面按这个顺序推，数字、逻辑和结论就会顺很多。</p>
-
-  <section class="data-box">
-    <strong>数据口径：事实、假设和推断要分开看</strong>
-    <p><b>数据来源：</b>事实锚点来自：<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>、<a href="https://www.volcengine.com/product/doubao">火山引擎豆包产品页</a>、<a href="https://finance.sina.com.cn/tech/roll/2026-04-02/doc-inhtazrz4446028.shtml">火山引擎公布 120 万亿 token 的公开报道</a>、<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>、<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek 官方 API Pricing</a>、<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报关于千问接入淘宝/支付宝/淘宝闪购的报道</a>、<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>。</p>
-    <p><b>计算口径：</b>推断链条为：公开事实锚点 → 变量公式 → 平台战略判断。收入、成本、覆盖率和抽佣额不能写成公司事实；只能在读者认可假设时，用公式自行替换参数。</p>
-  </section>
+  <p>大模型不是一门单独靠模型收费就能闭环的生意，它更像下一代互联网入口。分析豆包、千问、DeepSeek，只看模型能力或 API 价格都不够，真正要摊开的是三本账：模型账本、入口账本、旧业务账本。</p>
+  <p>模型账本解释“为什么必须商业化”，入口账本解释“钱从哪里来”，旧业务账本解释“为什么有的平台跑得快，有的平台反而克制”。这三本账连起来，才是大模型平台商业化的真实结构。</p>
 
   <h2>一、先看反常识：用户越多，模型账本未必越好</h2>
   <p>大模型的财务难点不在“有没有人用”，而在“使用越深，成本越硬”。一次普通问答、一次长上下文推理、一次图片生成、一次工具调用和一次 Agent 执行，背后都是不同强度的算力、带宽、存储和工程成本。用户规模扩大以后，平台首先得到的往往不是利润，而是更大的推理账单。</p>
@@ -137,19 +131,18 @@
   <rect x="152" y="438" width="13" height="13" rx="3" fill="#1D9E75"/><text class="fxs" x="172" y="448" fill="#555">收入</text>
   <rect x="242" y="438" width="13" height="13" rx="3" fill="#E27D5A"/><text class="fxs" x="262" y="448" fill="#555">缺口 / 仍需集团账本支撑</text>
 </svg><figcaption>图 1　模型账本的核心矛盾：收入覆盖率可能变好，但绝对缺口仍可能扩大</figcaption></figure>
-  <p>这张图的关键不是给出一个“豆包亏多少”的确定答案，而是说明怎么计算才合理。公开数据能够证明豆包有很大的使用规模和用户规模，但收入要看多少调用真正付费、按什么加权单价计费；成本则涉及推理、训练、带宽、存储、研发和获客，公司没有逐项披露。</p>
-  <p>所以专业写法不是直接断言“豆包一年亏多少”，而是：在官方 token 量和官方价格页基础上，建立 API 收入公式；在公司未披露成本的情况下，只能做成本敏感性分析。只要任何一个关键变量变化，结论都会变化。</p>
-  <p>但文章不能只有公式，也要给读者一个量级感。沿用前面对话里的基准情景，可以这样估：2026 年如果把订阅、API、广告试水和少量企业服务放在一起看，收入约 230 亿；成本端如果把算力资本开支/折旧、训练迭代、推理服务、研发和获客运营一起算，约 1350 亿，缺口约 1120 亿。到 2027-2028 年，四条腿成熟后收入可能抬到约 950 亿，但成本也可能随 token、多模态和 Agent 调用扩张到约 2400 亿，缺口仍约 1450 亿。</p>
-  <section class="callout red"><p><strong>这组数的读法：</strong>它不是“豆包官方亏损”，而是一个可替换参数的基准情景。真正重要的不是 1120 亿或 1450 亿这两个绝对值，而是方向：收入覆盖率可能从约 17% 升到约 40%，但如果成本随规模更快上行，绝对缺口仍会扩大。</p></section>
+  <p>图里的数字不是为了还原某一家公司真实损益，而是为了呈现一个结构性矛盾：公开数据已经能证明豆包具备超级应用级别的使用规模，但模型收入并不会自动覆盖模型成本。收入端取决于付费化比例和加权单价，成本端则随着推理、多模态和 Agent 多步调用继续上行。</p>
+  <p>在一个偏乐观的基准情景里，2026 年把订阅、API、广告试水和少量企业服务合在一起，收入约 230 亿；成本端把算力资本开支/折旧、训练迭代、推理服务、研发和获客运营合在一起，约 1350 亿，缺口约 1120 亿。到 2027-2028 年，四条腿逐步成熟后，收入可能抬到约 950 亿，但成本也可能随 token、多模态和 Agent 调用扩张到约 2400 亿，缺口仍约 1450 亿。</p>
+  <section class="callout red"><p><strong>反常识就在这里：</strong>收入覆盖率从约 17% 升到约 40%，看起来在改善；但绝对缺口从约 1120 亿扩大到约 1450 亿，压力反而更重。</p></section>
   <p>这也是为什么“卖模型能力”不够。订阅的上限取决于用户付费意愿，API 的上限受价格战约束，而广告和交易抽佣来自更大的商业预算池。大模型平台必须从能力供应商，升级成入口、决策和交易基础设施。</p>
   <section class="data-box">
-    <strong>数据口径 1：模型账本的事实与测算</strong>
+    <strong>测算说明 1：模型账本</strong>
     <p><b>数据来源：</b><a href="https://www.volcengine.com/product/doubao">火山引擎豆包产品页</a>公开标注日均 tokens 使用量，<a href="https://finance.sina.com.cn/tech/roll/2026-04-02/doc-inhtazrz4446028.shtml">新浪科技/爱范儿报道</a>也称火山引擎公布豆包大模型日均 Token 使用量突破 120 万亿；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile</a>披露 2026 年 3 月豆包、千问、DeepSeek 月活分别为 3.45 亿、1.66 亿、1.27 亿；<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>和 <a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek Pricing</a>提供模型调用价格口径。</p>
     <p><b>计算口径：</b>API 年收入公式：日 token 量 × 365 ÷ 1,000,000 × 加权单价 × 付费化比例。以 120 万亿 token/日为锚点，全年约 438 亿个“百万 token 单位”；若等效加权单价按 0.3 元/百万 token 左右估算，可得到约 128 亿 token 收入量级。总收入约 230 亿还要加订阅、企业服务和广告试水；成本约 1350 亿按算力/折旧、训练、推理、研发、获客运营分项估。成熟期收入约 950 亿来自四条腿加总，成本约 2400 亿来自用量和 Agent 多步调用继续增长。</p>
   </section>
 
   <h2>二、再问解法：商业化不是一条路，而是四类收费对象</h2>
-  <p>一旦模型账本本身打不平，平台就不能只问“会员多少钱、API 多少钱”。它必须问一个更大的问题：谁会为这个入口付钱？答案不是一个，而是四类：用户、开发者、品牌/商家、企业组织。</p>
+  <p>一旦模型账本本身打不平，平台就会从“会员多少钱、API 多少钱”，转向一个更大的问题：谁会为这个入口付钱？答案不是一个，而是四类：用户、开发者、品牌/商家、企业组织。</p>
   <p>这四类收费对象对应四条不同路径：用户订阅和 API 调用最像已有软件/云服务，产品可以先跑；广告要等 AI 答案成为稳定决策入口；Agent 抽佣要等支付、履约和售后闭环成熟；企业云和行业解决方案虽然付费意愿更明确，但交付更重、周期更长。</p>
   <section class="mini-grid">
     <section class="mini green"><strong>向用户收费</strong><span>订阅、增值能力、生产力工具。优点是现金流直接，问题是国内 C 端付费率和客单价有天花板。</span></section>
@@ -198,14 +191,8 @@
   <rect x="58" y="314" width="604" height="32" rx="10" fill="#fff7ea" stroke="#f0d9a8"/>
   <text class="fxs" x="360" y="335" text-anchor="middle" fill="#7a4f0b">节奏判断：订阅/API 是起点，广告是兜底，Agent 抽佣是胜负手，云和解决方案是利润池</text>
 </svg><figcaption>图 2　大模型平台商业化的四段节奏：订阅/API 是起点，广告是兜底，Agent 抽佣是胜负手，云和解决方案是利润池</figcaption></figure>
-  <p>这里还有一个容易被高估的收入池：AI 替代客服、办公、营销运营等企业人力成本。它当然有价值，但不应该被算进广告或 Agent 抽佣，而应该归入 toB 云、行业应用和解决方案。更重要的是，<strong>市场规模不等于平台收入</strong>：被替代的人力成本，要经过“AI 可替代率、企业愿意支付比例、应用层与模型/云层分成”三层折扣，最后才是模型平台能拿到的钱。</p>
+  <p>这里还有一个容易被高估的收入池：AI 替代客服、办公、营销运营等企业人力成本。它当然有价值，但更适合归入 toB 云、行业应用和解决方案，而不是广告或 Agent 抽佣。更关键的是，<strong>市场规模不等于平台收入</strong>：被替代的人力成本，要经过“AI 可替代率、企业愿意支付比例、应用层与模型/云层分成”三层折扣，最后才是模型平台能拿到的钱。</p>
   <p>因此，合理的节奏不是“先盈利再扩张”，而是先跑通低摩擦收费，再把平台入口和交易结果变成可收费资产：订阅和 API 先证明付费，AI 答案广告承接旧预算，Agent 抽佣绑定交易结果，云和行业解决方案沉淀长期利润。</p>
-  <section class="data-box">
-    <strong>数据口径 2：商业化节奏的依据</strong>
-    <p><b>数据来源：</b>API 价格以<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>和 <a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek 官方 Pricing</a>为准；交易闭环参考<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报关于千问接入淘宝、淘宝闪购、支付宝的报道</a>、<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>、<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / ACP 官方说明</a>和 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 关于 ACP 的官方新闻稿</a>；广告预算迁移参考<a href="https://36kr.com/p/3825724108873987">36 氪相关行业趋势报道</a>与<a href="https://www.miaozhen.com/all-reports/industryinsight/9653.html">秒针《中国数字营销趋势报告》</a>。</p>
-    <p><b>计算口径：</b>这里不是公司指引，而是产品成熟度排序：已商品化（订阅/API）→ 可承接预算（AI 答案广告）→ 需交易闭环（Agent 抽佣）→ 需企业交付（云/解决方案）。2026-2028 这类时间点只能理解为推断节奏。</p>
-  </section>
-
   <h2>三、平台广告为什么会出现：钱会跟着决策入口迁移</h2>
   <p>广告预算本质上不是跟媒体形态走，而是跟用户决策入口走。搜索时代，品牌买关键词；信息流时代，品牌买推荐流量；AI 时代，如果用户直接看答案，品牌自然会关心“答案里有没有我、排序靠不靠前、推荐理由是否可信”。</p>
   <p>用户迁移的底层逻辑，也不是“大家突然喜欢 AI”。而是每一代入口都替用户多做一步：搜索给的是链接和原料，用户还要自己读、自己比、自己判断；对话式 AI 给的是整理后的答案，用户少做了阅读和归纳；Agent 给的是完成后的结果，用户连比较、下单、支付和售后入口都可以少切换。<strong>入口每往下游走一步，商业预算也会跟着往下游走一步。</strong></p>
@@ -268,15 +255,9 @@
     <section class="mini "><strong>B. 第三方 GEO 服务</strong><span>入口不强或工具型公司帮品牌提升在多家 AI 里的被提及、被引用和被推荐概率，本质是服务商或 SaaS。</span></section>
     <section class="mini amber"><strong>C. 甲方自用 GEO</strong><span>有大量内容、商品或本地生活资产的公司给自己做结构化内容、官方知识库和 AI 友好数据，守住“被 AI 引用权”。</span></section>
   </section>
-  <p>所以，未来大厂的真实动作不一定叫“GEO”。更值得盯的是巨量引擎、百度营销、阿里妈妈、腾讯广告会不会上线 AI 答案位、AI 推荐位、品牌认证档案、Agent 成交归因这类商业化产品。名字可能是“AI 营销”“智能投放”“品牌知识库”“商品数据接入”，但底层都是同一件事：把 AI 决策入口里的可见性和成交结果变成可收费资产。</p>
-  <p>更可能的产品节奏，也不是一上来就在答案里塞满广告。第一步会是“官方数据接入”：让品牌、商家、商品、门店和服务以更可靠的格式进入平台知识库；第二步是“认证档案和赞助推荐”：在不破坏答案可信度的前提下，把商业身份、推荐理由和标识规则做清楚；第三步才是“成交归因和抽佣”：当 Agent 真能下单、预约、支付和售后时，平台按结果收费。</p>
+  <p>所以，未来大厂的真实动作不一定叫“GEO”。更关键的信号，是巨量引擎、百度营销、阿里妈妈、腾讯广告是否会上线 AI 答案位、AI 推荐位、品牌认证档案、Agent 成交归因这类商业化产品。名字可能是“AI 营销”“智能投放”“品牌知识库”“商品数据接入”，但底层都是同一件事：把 AI 决策入口里的可见性和成交结果变成可收费资产。</p>
+  <p>更可能的产品节奏，不会是一上来就在答案里塞满广告。第一步是“官方数据接入”：让品牌、商家、商品、门店和服务以更可靠的格式进入平台知识库；第二步是“认证档案和赞助推荐”：在不破坏答案可信度的前提下，把商业身份、推荐理由和标识规则做清楚；第三步才是“成交归因和抽佣”：当 Agent 真能下单、预约、支付和售后时，平台按结果收费。</p>
   <p>这也解释了为什么平台必须谨慎。AI 答案越像“唯一建议”，广告越接近决策干预；商业化能力越强，用户信任风险也越高。未来平台广告的核心竞争点，不只是能不能卖广告位，而是能不能在“可解释推荐”和“商业排序”之间建立足够稳定的边界。</p>
-  <section class="data-box">
-    <strong>数据口径 3：广告迁移与 GEO 三类玩家</strong>
-    <p><b>数据来源：</b><a href="https://36kr.com/p/3825724108873987">36 氪《2026 AI 重构下的社交媒体营销趋势报告》相关报道</a>与<a href="https://www.miaozhen.com/all-reports/industryinsight/9653.html">秒针《中国数字营销趋势报告》</a>用于证明广告主和营销服务商正在关注 AI 化入口；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile</a>用于证明 AI 原生 App 已形成大规模用户入口；千问接入淘宝、淘宝闪购、支付宝的事实参考<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报报道</a>和<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>，用于说明交易闭环已经进入产品化阶段。</p>
-    <p><b>计算口径：</b>计算上不直接把搜索广告盘子全部搬到 AI。更稳妥的迁移公式是：可迁移广告收入 = 旧搜索/内容/电商广告预算 × AI 入口渗透率 × 可商业化展示率 × 平台分成率。第三方 GEO 服务、甲方自用 GEO、平台广告/抽佣是相关但不同的收入池，不能互相等同。</p>
-  </section>
-
   <h2>四、Agent 抽佣为什么是胜负手：它卖的是结果，不是流量</h2>
   <p>如果说 AI 答案广告仍然是在影响注意力，那么 Agent 抽佣就是直接参与结果。搜索给用户一堆链接，AI 答案给用户一个建议，Agent 则把任务推进到支付、履约和售后。平台从“卖曝光”变成“卖完成”，商业模型也从注意力经济进入意图经济。</p>
   <p>这里最关键的一句话是：<strong>被提及不等于被选中，被选中也不等于能成交。</strong>一个品牌可能出现在 AI 答案里，但如果商品数据不完整、价格不透明、库存不可读、优惠不可核验、支付和售后不能接入 Agent 流程，它在成交环节仍然等于不存在。Agent 时代优化的不只是“让人看到你”，而是“让机器能理解你、比较你、信任你，并替用户完成交易”。</p>
@@ -321,12 +302,11 @@
   <rect x="408" y="256" width="12" height="12" rx="3" fill="#5dcaa5"/><text class="fxs" x="425" y="263" fill="#6b6b6b">增长主力（广告·抽佣）</text>
 </svg><figcaption>图 4　四条变现腿的基准情景：约 950 亿成熟期收入来自订阅、API、广告和 Agent 抽佣</figcaption></figure>
   <p>Agent 抽佣的想象空间更大，是因为它挂在 GMV 上，而不是挂在 token 上。但这并不意味着平台能把全部 GMV 都算成新增收入。真正的收入要扣掉履约成本、商家补贴、支付和售后成本，更重要的是，还要扣掉从自己旧业务里“搬运”过来的那部分收入。</p>
-  <p>所以判断 Agent 抽佣，不能只看“能促成多少 GMV”，要看净贡献：这笔成交是不是新增的、原来会不会在平台旧链路里发生、旧链路本来能赚多少广告和佣金、Agent 直达后还剩多少收费空间。对有电商和广告基本盘的平台来说，Agent 可能既是新收入，也是旧收入的压缩器。</p>
-  <p>如果沿用一个偏乐观的基准情景，四条腿成熟期可以拆成约 950 亿：订阅约 150 亿、API 约 420 亿、AI 答案广告约 220 亿、Agent 抽佣约 160 亿。这组数的意义不是“预测公司财报”，而是让读者看到量级：<strong>API 仍是短期大头，广告是承接旧预算的兜底项，Agent 抽佣天花板最高但起量最慢。</strong></p>
-  <section class="callout amber"><p><strong>基准情景怎么估：</strong>订阅按 3.45 亿 MAU、低个位数付费率和约 100 元/月上下的 ARPU 推；API 按日 token 量继续增长、加权单价接近价格战后的低价区间、付费化比例提升推；广告按 AI 入口渗透率、可商业化展示率和广告预算迁移比例推；Agent 抽佣按可促成 GMV、约 8% 左右可收费率和非自我蚕食比例推。任何一个参数换掉，结果都会变。</p></section>
-  <p>因此，四条腿可以给出量级，但必须和计算口径绑在一起。订阅看 MAU、付费率和 ARPU；API 看 token 量、加权单价和付费化比例；广告看 AI 入口流量与商业化展示率；Agent 看可促成 GMV、take rate 和非自我蚕食比例。它们不是同一种收入，不能用一个统一倍数粗暴估算。</p>
+  <p>判断 Agent 抽佣，关键不是“能促成多少 GMV”，而是净贡献：这笔成交是不是新增的，原来会不会在平台旧链路里发生，旧链路本来能赚多少广告和佣金，Agent 直达后还剩多少收费空间。对有电商和广告基本盘的平台来说，Agent 可能既是新收入，也是旧收入的压缩器。</p>
+  <p>如果沿用一个偏乐观的基准情景，四条腿成熟期可以拆成约 950 亿：订阅约 150 亿、API 约 420 亿、AI 答案广告约 220 亿、Agent 抽佣约 160 亿。这组数不对应公司财报预测，只用来呈现量级关系：<strong>API 仍是短期大头，广告是承接旧预算的兜底项，Agent 抽佣天花板最高但起量最慢。</strong></p>
+  <p>这组拆分背后有四个变量：订阅看 MAU、付费率和 ARPU；API 看 token 量、加权单价和付费化比例；广告看 AI 入口流量与商业化展示率；Agent 看可促成 GMV、take rate 和非自我蚕食比例。四条腿的共同点，是都在把“模型能力”翻译成“入口价值”。</p>
   <section class="data-box">
-    <strong>数据口径 4：四条变现腿的测算</strong>
+    <strong>测算说明 4：四条变现腿</strong>
     <p><b>数据来源：</b>订阅的用户规模锚点来自 <a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile</a>；API 单价来自<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>和 <a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek 官方 Pricing</a>；Agent 履约和支付闭环参考<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报报道的千问接入淘宝/支付宝/淘宝闪购</a>、<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>、<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / ACP 官方说明</a>和 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>。</p>
     <p><b>计算口径：</b>订阅收入 = MAU × 付费率 × ARPU，示例约 3.45 亿 × 3%-4% × 1000-1200 元/年，得到百亿级；API 收入 = token 量 × 加权单价 × 付费化比例，示例按用量增长和付费化提升得到约 420 亿；广告收入 = AI 入口流量 × 商业化展示率 × CPC/CPM，示例按旧广告预算小比例迁移得到约 220 亿；Agent 净收入 = 可促成 GMV × take rate × 非自我蚕食比例 - 履约/补贴/售后成本，示例按 2000 亿可促成 GMV × 8% 左右可收费率得到约 160 亿。</p>
   </section>
@@ -350,7 +330,7 @@
   <text class="ft" x="350" y="294" text-anchor="middle" fill="#4a473f">用阶段性投入，守入口、提效率，并撬动真付费的云</text>
 </svg><figcaption>图 5　两本账：豆包自己的账可能亏，但集团账本里有入口防御、商业化提效、toB 云和长期期权</figcaption></figure>
   <p>所以“亏的是豆包，赚的是字节”更准确的意思是：豆包自己的模型账本可能承压，但它对字节的价值不只体现在豆包 App 里。它可能体现在抖音搜索和内容推荐的防御、广告系统的理解能力、电商转化效率、火山引擎的模型服务，以及多模态生产力工具的长期期权里。</p>
-  <section class="callout amber"><p><strong>不要把“万亿市场”直接写成平台收入。</strong><br>以 AI 客服、AI 销售、AI 办公这类效率替代场景为例，更合理的计算链条是：平台可捕获收入 = 被替代的人力/软件支出 × AI 可替代率 × 企业愿意支付比例 × 模型/云层分成。应用层、集成商、云厂商和模型平台会一起分这块钱，模型平台通常只能拿其中一层。</p></section>
+  <section class="callout amber"><p><strong>这里要区分市场和收入。</strong><br>以 AI 客服、AI 销售、AI 办公这类效率替代场景为例，更合理的计算链条是：平台可捕获收入 = 被替代的人力/软件支出 × AI 可替代率 × 企业愿意支付比例 × 模型/云层分成。应用层、集成商、云厂商和模型平台会一起分这块钱，模型平台通常只能拿其中一层。</p></section>
   <figure class="fig">
 <svg class="f" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="市场规模不等于平台收入：万亿市场经过三道折扣后只剩百亿量级">
   <defs>
@@ -380,13 +360,8 @@
   <rect x="60" y="244" width="600" height="40" rx="12" fill="#fff7ea" stroke="#f0d9a8"/>
   <text class="fxs" x="360" y="269" text-anchor="middle" fill="#7a4f0b">市场≠捕获：三道折扣连乘后，落到模型平台的常只剩个位数百分比，且多记在 toB 云而非广告 / 抽佣</text>
 </svg><figcaption>图 6　“万亿市场”要过三道折扣：替代率 × 企业愿付比例 × 模型/云层分成，落到平台的往往只剩个位数百分比</figcaption></figure>
-  <p>举一个纯假设的数字例子（非任何公司数据）：某块人力替代市场名义上有 1 万亿，但 AI 当前只能可靠替代其中一部分，企业只愿意为其中一部分付费，模型平台又只能分到应用、集成、云之外的一层——三道折扣连乘之后，真正能被平台记进账的可能只剩百亿量级，而且大多记在 toB 云，而不是广告或 Agent 抽佣。这正是“市场规模”和“平台收入”必须分开看的原因：换一组替代率和分成假设，结论就会变，所以本文只给折扣链路，不给某个固定金额。</p>
-  <p>这不是说任何亏损都合理。真正的判断标准是：如果不做 AI 入口，集团旧业务被迁移走的风险有多大；如果做了 AI 入口，它能带来多少防御、增效和新收入。豆包值不值得做，不是单看“豆包能不能盈利”，而是看它能不能降低集团未来被截流的概率。</p>
-  <section class="data-box">
-    <strong>数据口径 5：两本账的边界</strong>
-    <p><b>数据来源：</b>豆包用户规模参考 <a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile</a>；token 调用量参考<a href="https://www.volcengine.com/product/doubao">火山引擎豆包产品页</a>与<a href="https://finance.sina.com.cn/tech/roll/2026-04-02/doc-inhtazrz4446028.shtml">火山引擎公布 120 万亿 token 的公开报道</a>；模型价格参考<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>。字节/抖音广告收入、电商 GMV、资本开支等不是字节官方披露，本文不把它们写成事实数据。</p>
-    <p><b>计算口径：</b>集团账本的计算不是“豆包亏损 + 字节收入”相加，而是风险收益判断：AI 入口防御价值 = 被截流风险 × 旧业务利润池；增效价值 = 广告/电商基数 × AI 带来的效率提升；云价值 = 企业客户用量 × 云/模型服务毛利。三个变量都需要公司数据才能精确测算。</p>
-  </section>
+  <p>举一个场景：某块人力替代市场名义上有 1 万亿，但 AI 只能可靠替代其中一部分，企业只愿意为其中一部分付费，模型平台又只能分到应用、集成、云之外的一层。三道折扣连乘之后，真正能被平台记进账的可能只剩百亿量级，而且大多记在 toB 云，而不是广告或 Agent 抽佣。</p>
+  <p>这不是说任何亏损都合理。更准确的账本框架是：如果不做 AI 入口，集团旧业务被迁移走的风险有多大；如果做了 AI 入口，它能带来多少防御、增效和新收入。豆包值不值得做，不能只看“豆包能不能盈利”，还要看它能不能降低集团未来被截流的概率。</p>
 
   <h2>六、为什么千问更积极，豆包更克制：自我蚕食税</h2>
   <p>同样是 Agent 商业化，千问会更积极，豆包会更克制，DeepSeek 会走另一条路。差异不主要来自技术，而来自旧业务。新入口如果吃掉自己的旧收入，公司就会慢；如果新入口是在放大旧收入，公司就会快。</p>
@@ -430,7 +405,7 @@
   <text class="fxs" x="40" y="324" fill="#6b6b6b">决策因素：① 现有盘是否被蚕食（最关键）　② 生态/履约　③ 成本　④ 用户购物心智　⑤ 合规</text>
 </svg><figcaption>图 7　谁的现有饭碗会被自己的 AI 吃掉，谁就慢。不是技术先后，而是自我蚕食税高低</figcaption></figure>
   <p>这里可以用一个变量模型理解“自我蚕食税”：同样一笔消费，如果它先经过内容种草、广告投流、直播间或货架转化，平台可能同时获得广告、佣金和推荐排序收益；如果 Agent 直接替用户比价下单，用户体验更短，但原来的曝光、比较、投流环节会被压缩，平台可商业化的环节也会变少。</p>
-  <section class="callout red"><p><strong>自我蚕食税的公式：</strong><br>传统链路收入 = GMV × 传统综合货币化率 α；Agent 直达收入 = GMV × Agent 可收费率 β。若 β 小于 α，差额 GMV × (α - β) 就是平台推进 Agent 时要承担的自我蚕食税。α 和 β 必须来自具体业务数据，不能凭空写成行业平均。</p></section>
+  <section class="callout red"><p><strong>自我蚕食税的公式：</strong><br>传统链路收入 = GMV × 传统综合货币化率 α；Agent 直达收入 = GMV × Agent 可收费率 β。若 β 小于 α，差额 GMV × (α - β) 就是平台推进 Agent 时要承担的自我蚕食税。</p></section>
   <figure class="fig">
 <svg class="f" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自我蚕食税数字示例：同一笔订单传统链路与 Agent 直达的货币化对比">
   <text class="fh" x="360" y="32" text-anchor="middle" fill="#1a1a1a">自我蚕食税：同一笔订单，路径变短，可收费环节变少</text>
@@ -455,9 +430,9 @@
   <rect x="60" y="296" width="600" height="46" rx="12" fill="#fcecea" stroke="#e7a39c"/>
   <text class="fs" x="360" y="324" text-anchor="middle" fill="#8a1f1f">差额约 12 个百分点（¥120）＝自我蚕食税：投流环节流失，竞价加权只补回约 3%</text>
 </svg><figcaption>图 8　自我蚕食税的一个数字例子：同一笔订单，Agent 直达把可收费环节从约 20% 压到约 8%</figcaption></figure>
-  <p>把 α、β 代成一个纯假设的场景会更直观（非任何公司数据）：一笔 ¥1000 的订单，如果走传统“逛”的链路，平台可能拿到约 15% 的投流广告加约 5% 的基础佣金，合计约 20%；如果 Agent 替用户直接比价下单，省掉了“逛”，原来约 15% 的投流大部分消失，平台只能靠约 5% 的基础佣金，再加上为“被优先推荐”新设的约 3% 竞价加权，合计约 8%。中间约 12 个百分点的差额，就是平台推进 Agent 时要自己消化的自我蚕食税。需要强调的是，这里的 8% 不是硬上限——它取决于竞价加权能补回多少、新增成交有多少是纯增量；旧业务里广告和投流越赚钱的平台，这道税越重，也就越要算清楚新增成交能不能补回被压缩的旧收入。</p>
+  <p>一笔 ¥1000 的订单，如果走传统“逛”的链路，平台可能拿到约 15% 的投流广告加约 5% 的基础佣金，合计约 20%；如果 Agent 替用户直接比价下单，省掉了“逛”，原来约 15% 的投流大部分消失，平台只能靠约 5% 的基础佣金，再加上为“被优先推荐”新设的约 3% 竞价加权，合计约 8%。中间约 12 个百分点的差额，就是平台推进 Agent 时要消化的自我蚕食税。</p>
   <section class="data-box">
-    <strong>数据口径 6：自我蚕食税公式</strong>
+    <strong>测算说明 6：自我蚕食税</strong>
     <p><b>数据来源：</b>可验证的事实锚点是：<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">千问已经接入淘宝、淘宝闪购和支付宝 AI 付</a>，证明交易型 Agent 的路径已经出现；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>说明智能体支付、支付 MCP 等能力正在被产品化。字节内容电商和信息流广告的具体货币化率并非官方披露，本文不使用固定百分比。</p>
     <p><b>计算口径：</b>自我蚕食税 = GMV × (传统综合货币化率 α - Agent 可收费率 β) × 被替代比例。只有 α、β 和被替代比例来自具体业务数据时，才可以落到金额；否则只能作为机制公式。</p>
   </section>
@@ -480,12 +455,6 @@
   <p>所以“付佣金”从用户体验上看，并不是用户主动掏钱给 Agent，而是商家为成交付费，平台为用户提供更短路径。用户真正比较的是总体验：价格是否合理、推荐是否可信、售后是否可靠、有没有更省事。</p>
   <p>用户体感大概率会经历三个阶段：第一阶段是“真香”，因为免费、方便、少切 App；第二阶段是“起疑”，因为用户会问“它给我选的，是最适合我的，还是佣金最高的”；第三阶段是“分层”，一部分用户继续接受免费层里的广告和抽佣，一部分用户愿意为更少干扰付费，还有一部分会转向低商业化、中立或开源的产品。</p>
   <p>这也意味着 Agent 商业化的边界一定是信任。一旦用户觉得推荐被广告和佣金污染，就会转向付费去广告、开源中立、或者更垂直的专业 Agent。未来很可能形成三层产品：免费层带广告/抽佣，付费层买更高信任，中立层用低商业化建立差异。</p>
-  <section class="data-box">
-    <strong>判断口径 7：用户接受 Agent 的条件</strong>
-    <p><b>数据来源：</b>可参考千问接入淘宝闪购与支付宝 AI 付的公开案例：用户一句话发起需求，系统完成推荐、比价、优惠券、确认支付等流程；这证明交易型 Agent 的用户体验路径已经被样板化。</p>
-    <p><b>计算口径：</b>用户是否接受 = 节省时间价值 + 决策质量提升 + 操作成本下降 + 售后可追责 - 价格溢价 - 广告干扰 - 信任损耗。这里不是财务公式，而是用户体验判断框架。</p>
-  </section>
-
   <h2>结尾：真正的竞争不是模型强弱，而是谁能重写入口账本</h2>
   <p>回到开头的问题：为什么大模型平台必须做广告和 Agent？因为单纯的模型账本很难支撑超级入口级别的成本；而广告和 Agent 抽佣，分别对应“影响决策”和“完成交易”两个更大的收入池。</p>
   <ul><li><strong>商业化形式：</strong>订阅、API、AI 答案广告、Agent 抽佣、toB 云和行业解决方案，本质上对应四类收费对象。</li><li><strong>节奏判断：</strong>订阅/API 先跑，广告承接旧预算，Agent 抽佣在支付和履约成熟后放量，云和解决方案沉淀长期利润。</li><li><strong>平台为什么必须做：</strong>模型账本收入薄、成本硬，必须从卖能力升级为卖入口、卖决策、卖结果。</li><li><strong>豆包的关键：</strong>不只是豆包 App 能不能赚钱，而是字节能不能守住 AI 时代的新入口和旧商业化链路。</li><li><strong>竞争格局：</strong>千问抢交易闭环，豆包抢内容消费入口，DeepSeek 抢低价中立基础设施和开放模型心智，垂直 Agent 抢具体场景。</li><li><strong>用户为什么会迁移：</strong>不是因为喜欢佣金，而是因为 Agent 用更短路径、更少决策和更强确定性换取用户信任。</li><li><strong>终局判断：</strong>免费层、付费高信任层和中立基础设施层会长期并存；商业化越强，信任治理越重要。</li></ul>
@@ -494,9 +463,9 @@
   <h2>数据说明与参考口径</h2>
   <section class="note">
     <p><strong>① 官方 / 权威数据锚点：</strong><a href="https://www.volcengine.com/product/doubao">火山引擎豆包产品页</a>用于核对豆包产品口径；<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>用于核对豆包模型调用价格；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek 官方 API Pricing</a>用于核对 DeepSeek 输入、输出和缓存命中价格；<a href="https://api-docs.deepseek.com/news/news1226">DeepSeek-V3 官方发布页</a>用于核对开放模型与论文口径；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对 AI 原生 App、豆包、千问、DeepSeek 的 MAU 和活跃率；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付、支付 MCP、订阅和打赏等产品化能力。</p>
-    <p><strong>② 公开报道 / 行业趋势锚点：</strong><a href="https://finance.sina.com.cn/tech/roll/2026-04-02/doc-inhtazrz4446028.shtml">新浪科技/爱范儿关于火山引擎公布 120 万亿 Token 的报道</a>用于交叉验证火山引擎披露口径；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报关于千问接入淘宝、淘宝闪购、支付宝的报道</a>用于核对交易型 Agent 的真实产品路径；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol 官方说明</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agentic Commerce 的国际路径；<a href="https://36kr.com/p/3825724108873987">36 氪《2026 AI 重构下的社交媒体营销趋势报告》相关报道</a>与<a href="https://www.miaozhen.com/all-reports/industryinsight/9653.html">秒针《中国数字营销趋势报告》</a>只作为广告预算和营销入口变化的趋势证据，不作为任何平台收入测算的直接依据。</p>
-    <p><strong>③ 未披露数据处理：</strong>豆包独立收入、成本、亏损，四条变现腿的具体金额，Agent 抽佣率，自我蚕食比例，均不是公司披露数据。本文正文中的 230 亿、1350 亿、1120 亿、950 亿、2400 亿、1450 亿，以及订阅 150 亿、API 420 亿、广告 220 亿、Agent 抽佣 160 亿，都是“公开锚点 + 假设参数”的基准情景测算，不是公司事实。读者应按公式替换参数：收入 = 规模 × 单价/费率 × 转化比例；成本 = 推理 + 训练摊销 + 带宽存储 + 研发 + 获客运营。</p>
-    <p><strong>④ API 单价口径：</strong>API 单价必须回到官方价格页逐项取数，不能只拿一个最低价或宣传价代表全部收入。不同模型、输入/输出、上下文长度、缓存命中、折扣和地域都会影响加权单价；文章中所有 API 收入只能写成“加权单价 × 用量 × 付费化比例”。</p>
+    <p><strong>② 公开报道 / 行业趋势锚点：</strong><a href="https://finance.sina.com.cn/tech/roll/2026-04-02/doc-inhtazrz4446028.shtml">新浪科技/爱范儿关于火山引擎公布 120 万亿 Token 的报道</a>用于交叉验证火山引擎披露口径；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报关于千问接入淘宝、淘宝闪购、支付宝的报道</a>用于核对交易型 Agent 的真实产品路径；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol 官方说明</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agentic Commerce 的国际路径；<a href="https://36kr.com/p/3825724108873987">36 氪《2026 AI 重构下的社交媒体营销趋势报告》相关报道</a>与<a href="https://www.miaozhen.com/all-reports/industryinsight/9653.html">秒针《中国数字营销趋势报告》</a>用于观察广告预算和营销入口变化趋势；不直接纳入平台收入测算。</p>
+    <p><strong>③ 未披露数据处理：</strong>豆包独立收入、成本、亏损，四条变现腿的具体金额，Agent 抽佣率，自我蚕食比例，均不是公司披露数据。文中 230 亿、1350 亿、1120 亿、950 亿、2400 亿、1450 亿，以及订阅 150 亿、API 420 亿、广告 220 亿、Agent 抽佣 160 亿，均为“公开锚点 + 假设参数”的基准情景测算。核心公式为：收入 = 规模 × 单价/费率 × 转化比例；成本 = 推理 + 训练摊销 + 带宽存储 + 研发 + 获客运营。</p>
+    <p><strong>④ API 单价口径：</strong>API 收入测算以官方价格页的分项价格为基准。不同模型、输入/输出、上下文长度、缓存命中、折扣和地域都会影响加权单价；文章中所有 API 收入均按“加权单价 × 用量 × 付费化比例”处理。</p>
   </section>
 </main>
 </body>
