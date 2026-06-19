@@ -33,7 +33,10 @@
   .callout p{margin:0;font-size:16px;line-height:1.85;}
   .note{margin:26px 0;padding:16px 17px;border-radius:12px;background:#f5f3ee;color:#5f5a50;font-size:14px;line-height:1.85;}
   .note p{margin:8px 0;font-size:14px;color:#5f5a50;line-height:1.85;}
-  .note a,.data-box a{color:var(--teal);text-decoration:none;border-bottom:1px solid #b7d8cc;}
+  .note a,.data-box a,.calc-note a{color:var(--teal);text-decoration:none;border-bottom:1px solid #b7d8cc;}
+  .calc-note{margin:10px 0 22px;padding:12px 14px 11px;border-radius:10px;background:#f8f6f0;border:1px solid #e8dfce;border-left:3px solid #d6a148;}
+  .calc-note strong{display:block;margin-bottom:5px;font-size:13.5px;line-height:1.6;color:#7a4f0b;}
+  .calc-note p{margin:5px 0;font-size:13.2px;line-height:1.78;color:#5f5a50;}
   .fig{margin:30px 0;padding:18px 14px 14px;background:#fbfaf7;border:1px solid var(--line);border-radius:16px;overflow-x:auto;}
   .fig svg{width:100%;min-width:650px;height:auto;display:block;}
   .fig figcaption{margin-top:12px;text-align:center;color:#746e64;font-size:13.5px;line-height:1.65;}
@@ -89,13 +92,25 @@
   <h2>01 先别谈商业化，先算一笔最朴素的账</h2>
   <p>要理解大模型平台到底能不能靠“卖模型能力”活下来，需要先看一个最基础的问题：模型到底赚多少钱？成本又是多少？</p>
   <p>我们先拿豆包做一个样本，用非常朴素的方式拆一下。这里不是豆包或字节的财报，而是以公开披露的豆包调用量为锚点，做一个量级推算。</p>
-  <ul><li>样本口径：豆包大模型，不是全行业平均值</li><li>日均 token 调用量：约 120 万亿 token/天（来源：<a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报引述火山引擎披露</a>）</li><li>换算后：约 1.2 亿个“百万 token 单位/天”（由 120 万亿 ÷ 100 万换算）</li></ul>
-  <p>这里要先分清两个价格：<strong>官方 API 标价</strong>和<strong>全量有效变现价</strong>。</p>
-  <p>官方 API 标价并不低。以豆包 1.6 的主流 0-32K 输入区间为例，公开报道中的价格是输入 0.8 元/百万 token、输出 8 元/百万 token；如果按常见的 3:1 输入输出比例折算，综合价格约 2.6 元/百万 token。即便使用更轻量模型、批量推理、缓存命中和企业折扣，真实付费 API 的结算价也更可能落在 0.6-3 元/百万 token 这个区间，而不是 0.3 元。</p>
-  <p>但 120 万亿 token 不是“全部都能按 API 标价收费”的 token。它更接近总使用量，里面可能混有免费 C 端使用、内部调用、缓存命中、企业折扣和不同模型组合。所以这里真正要估的不是 API 标价，而是：<strong>摊到所有 token 上，每百万 token 最终能变成多少收入。</strong></p>
-  <p>本文基准假设取 0.3 元/百万 token（推测的）。这个数字可以理解为：如果真实 API 结算价约 1.5 元/百万 token，那么全量 token 里约 20% 被有效变现；或者如果按豆包 1.6 主力综合价 2.6 元/百万 token 估算，那么约 12% 的 token 被有效变现。</p>
-  <p>那么，每天收入约等于 1.2 亿 × 0.3 元，也就是约 3600 万元。再乘以 365 天，每年大约是 131 亿元级别（推测的）。</p>
-  <p>如果把有效变现价提高到 0.5 元/百万 token，年化模型调用收入会变成约 219 亿元；提高到 0.8 元，则约 350 亿元。这个敏感性很重要：0.3 不是说豆包 API 只卖 0.3 元，而是一个偏保守的全量摊薄口径。</p>
+  <section class="calc-note">
+    <strong>口径说明</strong>
+    <p>样本口径是豆包大模型，不是全行业平均值。公开锚点是：豆包大模型日均调用量约 120 万亿 token/天（来源：<a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报引述火山引擎披露</a>）。</p><p>换算方式很直接：120 万亿 ÷ 100 万 = 1.2 亿个“百万 token 单位/天”。</p>
+  </section>
+  <p>这里最容易混淆的，是<strong>官方 API 标价</strong>和<strong>全量有效变现价</strong>。官方 API 标价并不低，但总调用量不能直接按 API 标价相乘。</p>
+  <section class="calc-note">
+    <strong>价格口径</strong>
+    <p>以豆包 1.6 的主流 0-32K 输入区间为例，公开报道中的价格是输入 0.8 元/百万 token、输出 8 元/百万 token；如果按常见的 3:1 输入输出比例折算，综合价格约 2.6 元/百万 token。</p><p>考虑轻量模型、批量推理、缓存命中和企业折扣，真实付费 API 的结算价更可能在 0.6-3 元/百万 token，而不是 0.3 元。</p><p>但 120 万亿 token 更接近总使用量，里面可能有免费 C 端使用、内部调用、缓存命中、企业折扣和不同模型组合。所以本文估的是“摊到所有 token 上，每百万 token 最终能变成多少收入”。</p>
+  </section>
+  <p>本文把基准假设设为 0.3 元/百万 token（推测的）。这个数不是豆包 API 的标价，而是偏保守的全量摊薄口径。</p>
+  <section class="calc-note">
+    <strong>有效变现假设</strong>
+    <p>如果真实 API 结算价约 1.5 元/百万 token，那么全量 token 里约 20% 被有效变现，摊薄后就是 0.3 元。</p><p>如果按豆包 1.6 主力综合价约 2.6 元/百万 token 估算，那么约 12% 的 token 被有效变现，摊薄后也是约 0.3 元。</p>
+  </section>
+  <p>按这个口径，豆包模型调用收入大约是 131 亿元级别（推测的）。</p>
+  <section class="calc-note">
+    <strong>计算过程</strong>
+    <p>每天收入：1.2 亿个“百万 token 单位” × 0.3 元 ≈ 3600 万元。</p><p>年化收入：3600 万元 × 365 天 ≈ 131 亿元。</p><p>敏感性：如果有效变现价提高到 0.5 元/百万 token，年化收入约 219 亿元；提高到 0.8 元，则约 350 亿元。</p>
+  </section>
   <p>考虑免费用户、折扣定价、不同模型混合调用，以及企业/API 的价格差异，比较合理的结论是：<strong>模型调用收入大致在百亿级，而不是千亿级（推测的）。</strong></p>
   <section class="callout amber"><p><strong>真正的问题不是“百亿收入少不少”。</strong><br>真正的问题是，调用量已经是超级互联网级别，但收入仍然只是百亿级。</p></section>
 
@@ -105,9 +120,15 @@
   <ul><li>推理成本：每一次回答都要算力</li><li>长上下文成本：读得越长，账单越厚</li><li>多轮 Agent 成本：搜索、比较、调用工具、确认支付会多次消耗模型</li><li>多模态成本：图像、视频、语音比普通文本更重</li><li>基础设施成本：带宽、存储、训练和模型迭代持续发生</li></ul>
   <p>这意味着：<strong>用户用得越多，不一定利润越高，反而可能成本增长越快。</strong></p>
   <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、广告试水和早期 Agent，在保守基准下大约 230 亿（推测的）。同期的成本压力，如果把算力折旧/租赁、训练、推理、研发运营和基础设施摊销一起看，中心情景大约 1350 亿（推测的）。</p>
-  <p>这个 1350 亿不是豆包 App 的独立财报成本，而是偏“集团 AI 投入口径”的摊算。本文的推测链条是这样的：</p>
-  <ul><li>先找外部锚点：公开报道中，字节 2026 年 AI 资本开支计划已经是 2000 亿元以上的量级。这个数字不是成本本身，但说明 AI 基础设施投入已经进入千亿级。</li><li>再做业务分摊：不是所有 AI capex 都该算到豆包，但豆包、火山方舟、模型训练、推理服务、多模态和 Agent 基础设施是核心去向。保守按 55%-60% 的资源占用估算，对应约 1100-1200 亿。</li><li>再补非 capex 成本：训练实验、模型迭代、数据处理、安全审核、带宽存储、工程研发和运营等，按 150-250 亿量级估。</li><li>这组假设合计约 1250-1450 亿，中心情景取约 1350 亿；如果把分摊比例和运营成本再放宽，合理敏感区间大约是 1100-1600 亿。它不是精确财报数字。</li></ul>
-  <p>在这个中心情景下，缺口和覆盖率就不是再推测，而是公式：缺口 = 1350 - 230 = 1120 亿；覆盖率 = 230 ÷ 1350 ≈ 17%。如果成本压力只取 1100 亿，覆盖率约 21%；如果取 1600 亿，覆盖率约 14%。不管取哪种情景，结论都一样：模型收入短期很难覆盖模型成本压力。</p>
+  <section class="calc-note">
+    <strong>成本压力口径</strong>
+    <p>1350 亿不是豆包 App 的独立财报成本，而是偏“集团 AI 投入口径”的摊算。</p><p>外部锚点：公开报道中，字节 2026 年 AI 资本开支计划已经是 2000 亿元以上的量级。这个数字不是成本本身，但说明 AI 基础设施投入已经进入千亿级。</p><p>业务分摊：不是所有 AI capex 都该算到豆包，但豆包、火山方舟、模型训练、推理服务、多模态和 Agent 基础设施是核心去向。保守按 55%-60% 的资源占用估算，对应约 1100-1200 亿。</p><p>非 capex 成本：训练实验、模型迭代、数据处理、安全审核、带宽存储、工程研发和运营等，按 150-250 亿量级估。</p><p>中心情景：上述假设合计约 1250-1450 亿，取中位数约 1350 亿；放宽来看，合理敏感区间大约是 1100-1600 亿。</p>
+  </section>
+  <p>在这个中心情景下，缺口和覆盖率就不是再推测，而是公式。无论用中心情景，还是放宽到 1100-1600 亿的成本区间，结论都一样：模型收入短期很难覆盖模型成本压力。</p>
+  <section class="calc-note">
+    <strong>缺口与覆盖率</strong>
+    <p>中心情景：缺口 = 1350 - 230 = 1120 亿；覆盖率 = 230 ÷ 1350 ≈ 17%。</p><p>敏感性：如果成本压力只取 1100 亿，覆盖率约 21%；如果取 1600 亿，覆盖率约 14%。</p>
+  </section>
 
   <h2>03 一个反直觉的结论出现了</h2>
   <p>如果只看这组数字，会得出一个直觉判断：模型业务根本不赚钱。</p>
