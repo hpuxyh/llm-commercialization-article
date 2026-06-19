@@ -76,25 +76,35 @@
 </head>
 <body>
 <main class="wrap">
+  
   <p class="kicker">深度 · 商业化框架 · 公众号版</p>
-  <h1>亏的是豆包，赚的是字节？<br>大模型商业化真正要算的是入口账</h1>
-  <p class="deck">同样一句“帮我点杯奶茶”，有的 AI 已经能把推荐、优惠、下单和支付串起来；有的 AI 仍然更像一个聪明的问答工具。表面看，这是产品进度差异。往深一层看，这是两套完全不同的商业化账本。</p>
-
-  <section class="metrics">
-    <section class="metric green"><span>事实锚点</span><strong>120 万亿 token/日</strong><em>token 是模型处理文字的计量单位，用来判断调用规模。</em></section>
-    <section class="metric green"><span>事实锚点</span><strong>3.45 亿月活</strong><em>QuestMobile 披露的豆包 2026Q1 月活用户规模。</em></section>
-  </section>
-
-  <p>判断大模型平台怎么赚钱，不能只看模型强不强，也不能只看会员卖多少钱。真正要看的是三本账：模型自己的账、入口迁移的账、旧业务被改写的账。</p>
-  <p>模型自己的账解释为什么它短期很难靠 API 和会员收回成本；入口迁移的账解释广告和交易抽佣为什么会出现；旧业务的账解释为什么千问可以更积极，豆包会更谨慎，DeepSeek 又会走另一条路。</p>
+  <h1>亏的是豆包，赚的是字节？<br>大模型商业化真正算的是入口账</h1>
+  <p>有一个很有意思的现象。</p>
+  <p>如果你同时用过不同大模型产品，可能会发现：有的产品已经可以直接帮你“点奶茶、下单、订服务”；有的产品依然更克制，更多停留在“回答问题”。</p>
+  <p>比如在一些产品里，Agent 已经能直接接入外卖、电商、支付体系，而在另一些产品里，这一步还被明显收着。</p>
+  <p>表面看，这是产品策略差异。</p>
+  <p>但如果往深一层看，这其实不是“技术路线不同”，而是<strong>商业化账本完全不同</strong>。</p>
 
   <h2>01 先别谈商业化，先算一笔最朴素的账</h2>
-  <p>大模型现在最大的问题，不是没人用，而是用得越深，成本越硬。一次普通问答要消耗算力；一次长文总结要消耗更多上下文；一次图片、视频生成要消耗更重的模型；一次智能体任务，背后还可能有搜索、比价、读评价、调工具、确认支付、生成解释等多轮调用。用户看到的是路径变短，平台承担的是调用链变长。</p>
-  <p>所以第一笔账，要从调用量开始。火山引擎披露过一个关键数字：豆包大模型日均使用量超过 120 万亿 token。token 可以简单理解为模型处理文字的计量单位，用户每问一句、模型每答一句，都会消耗 token。</p>
-  <p>模型接口通常按“每百万 token”计价。120 万亿 token/日，先除以 100 万，等于每天 1.2 亿个“百万 token 单位”。如果每个单位平均只能收到约 0.3 元，一天就是约 3600 万元；乘以 365 天，一年约 131 亿元。再考虑免费额度、折扣定价和不同模型混合调用，本文按约 128 亿元看接口收入量级。</p>
-  <section class="callout amber"><p><strong>这一步的关键不是精确到小数点。</strong><br>关键是看清量级：调用量已经是超级应用级别，但接口收入仍然只是百亿级，不是千亿级。</p></section>
-  <p>再把订阅、企业服务和广告试水加上，2026 年模型自己能看到的收入大概是 230 亿元左右。另一边，C 端 3.45 亿月活大多免费，平台还要承担回答服务、训练迭代、算力折旧、带宽存储、研发和获客。把这些放到一张账上，成本可能已经到 1350 亿元左右。</p>
-  <p>于是第一组数字就出来了：收入约 230 亿，成本约 1350 亿，缺口约 1120 亿，收入覆盖率约 17%。这不是公司财报，而是用公开数据做的量级测算。它要说明的是一个结构性矛盾：使用规模起来了，模型自己的收入并不会自动覆盖模型自己的成本。</p>
+  <p>要理解大模型平台到底能不能靠“卖模型能力”活下来，需要先看一个最基础的问题：模型到底赚多少钱？成本又是多少？</p>
+  <p>我们用一个非常朴素的方式拆一下。这里不是财报，而是量级推算。</p>
+  <ul><li>日均 token 调用量：约 120 万亿 token/天</li><li>换算后：约 1.2 亿个“百万 token 单位/天”</li><li>每百万 token 平均收入假设：约 0.3 元</li></ul>
+  <p>那么，每天收入约等于 1.2 亿 × 0.3 元，也就是约 3600 万元。再乘以 365 天，每年大约是 131 亿元级别。</p>
+  <p>考虑免费用户、折扣定价、不同模型混合调用，以及企业/API 的价格差异，比较合理的结论是：<strong>接口收入大致在百亿级，而不是千亿级。</strong></p>
+  <section class="callout amber"><p><strong>真正的问题不是“百亿收入少不少”。</strong><br>真正的问题是，调用量已经是超级互联网级别，但收入仍然只是百亿级。</p></section>
+
+  <h2>02 更关键的问题：成本是另一条完全不同的曲线</h2>
+  <p>如果只看收入，会误判。</p>
+  <p>因为大模型真正的成本结构，是随着使用深度不断放大的。一次普通问答有推理成本，长上下文会拉高成本，多轮 Agent 调用会继续叠加成本，图像和视频生成又是更重的一层。再往后，还有带宽、存储、训练和持续迭代。</p>
+  <ul><li>推理成本：每一次回答都要算力</li><li>长上下文成本：读得越长，账单越厚</li><li>多轮 Agent 成本：搜索、比较、调用工具、确认支付会多次消耗模型</li><li>多模态成本：图像、视频、语音比普通文本更重</li><li>基础设施成本：带宽、存储、训练和模型迭代持续发生</li></ul>
+  <p>这意味着：<strong>用户用得越多，不一定利润越高，反而可能成本增长越快。</strong></p>
+  <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、广告试水和早期 Agent，大约 230 亿；同期成本大约 1350 亿。结果就是：缺口约 1120 亿，覆盖率约 17%。</p>
+
+  <h2>03 一个反直觉的结论出现了</h2>
+  <p>如果只看这组数字，会得出一个直觉判断：模型业务根本不赚钱。</p>
+  <p>但更关键的地方在下一层：收入在变好，缺口反而可能变大。</p>
+  <p>原因是，收入增长和成本增长不是同一条曲线。收入是慢变量，要靠产品、付费、广告和抽佣慢慢成熟；成本是快变量，只要调用量、上下文长度、多模态和 Agent 任务上来，就会立刻放大。</p>
+  <p>所以即使未来进入成熟阶段，收入可能到 950 亿，成本也可能到 2400 亿。覆盖率从约 17% 提升到约 40%，看起来更好了；但缺口反而从 1120 亿扩大到 1450 亿。</p>
   <figure class="fig">
 <svg class="f" viewBox="0 0 700 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="收入成本缺口测算：2026 与 2027-2028">
   <text class="fh" x="350" y="32" text-anchor="middle" fill="#1a1a1a">模型账本的核心矛盾：覆盖率变好，绝对缺口仍可能扩大</text>
@@ -128,107 +138,49 @@
 
   <rect x="152" y="438" width="13" height="13" rx="3" fill="#1D9E75"/><text class="fxs" x="172" y="448" fill="#555">收入</text>
   <rect x="242" y="438" width="13" height="13" rx="3" fill="#E27D5A"/><text class="fxs" x="262" y="448" fill="#555">缺口 / 仍需集团账本支撑</text>
-</svg><figcaption>图 1　模型自己的账：覆盖率可能变好，但绝对缺口仍可能扩大</figcaption></figure>
+</svg><figcaption>图 1　收入 vs 成本缺口图：覆盖率上升，但绝对缺口可能扩大</figcaption></figure>
   <section class="metrics">
-    <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>230=订阅/接口调用/广告试水/企业服务加总；1350=算力折旧+训练和回答成本+研发运营；缺口=1350-230=1120，覆盖率=230÷1350≈17%。</em></section>
-    <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>950=150+420+220+160 四条腿；2400=用量增长+多步调用放大后的成本；缺口=2400-950=1450，覆盖率≈40%。</em></section>
+    <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>缺口=1350-230=1120，覆盖率=230÷1350≈17%。</em></section>
+    <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>缺口=2400-950=1450，覆盖率≈40%。</em></section>
   </section>
-  <p>这张图最反直觉的地方，是两个指标方向相反：覆盖率在变好，绝对缺口却可能变大。成熟期如果订阅、接口、广告、智能体抽佣都长出来，收入可能抬到约 950 亿；但随着调用量、图片视频生成、多步智能体任务继续增加，成本也可能被推到约 2400 亿。覆盖率从 17% 提升到 40%，看起来更健康；但缺口从 1120 亿扩大到 1450 亿，压力反而更重。</p>
-  <p>这就解释了为什么“卖模型能力”不够。接口调用能带来收入，但价格战会压低单价；C 端用户很多，但免费用户越多，平台越要承担使用成本；广告和智能体如果能进入用户决策链路，才有机会把旧搜索、内容、电商广告和交易分成的钱接过来。</p>
-  <section class="callout green"><p><strong>算完这笔账，结论才变得清楚：</strong><br>大模型平台的商业化不是“卖会员能不能赚钱”这么简单，而是一道入口账本题。模型自己短期很难收回成本，收入重心会从“卖调用次数”，继续推向“卖决策入口”和“卖交易结果”。</p></section>
-  <section class="data-box">
-    <strong>这组数字怎么来的</strong>
-    <p><b>依据：</b><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报</a>报道火山引擎公布豆包大模型日均 Token 使用量突破 120 万亿；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile</a>披露 2026 年 3 月豆包、千问、DeepSeek 月活分别为 3.45 亿、1.66 亿、1.27 亿；<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>和 <a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek Pricing</a>提供模型调用价格口径。</p>
-    <p><b>怎么算：</b>接口调用收入：120 万亿 token/日 ÷ 100 万 × 365 天 × 约 0.3 元/百万 token ≈ 131 亿，考虑折扣、免费额度和模型结构差异，按约 128 亿看。2026 总收入约 230 亿 = 接口调用约 128 亿 + 订阅/企业服务/广告试水等；成本约 1350 亿 = 回答服务 + 训练迭代 + 算力折旧 + 带宽存储 + 研发获客。成熟期收入约 950 亿来自四条腿加总，成本约 2400 亿来自用量和智能体多步调用继续增长。</p>
-  </section>
+  <section class="callout red"><p><strong>这就是最反直觉的地方：</strong><br>规模越大，不代表越接近盈利，反而可能更依赖新的商业模式。</p></section>
 
-  <h2>02 从卖能力，到卖入口，再到卖结果</h2>
-  <p>算完模型自己的账，才轮到商业化。大模型平台最早能做的，是会员、API 和企业服务。这些收入像传统软件和云服务，容易理解，也容易先跑起来。但它们解决的是“卖能力”的问题，不是“入口怎么赚钱”的问题。</p>
-  <p>真正的路径会往下游走：先卖能力，再卖曝光，最后卖结果。卖能力，是 API、订阅和企业服务；卖曝光，是 AI 答案里的品牌露出、推荐排序、官方数据接入；卖结果，是智能体帮用户完成下单、预约、支付、履约之后，按成交或服务结果抽佣。</p>
+  <h2>04 真正的核心问题出现了</h2>
+  <p>到这里，问题可以收敛成一个关键判断：<strong>大模型平台的问题，从来不是“能不能卖 API”，而是“入口怎么赚钱”。</strong></p>
+  <p>因为 API 只是第一阶段。真正的路径其实是三步：先卖能力，再卖曝光，最后卖结果。</p>
+  <ul><li><strong>第一阶段：卖能力。</strong>API、订阅、企业服务。</li><li><strong>第二阶段：卖曝光。</strong>AI 答案中的推荐、品牌露出、类似搜索广告迁移。</li><li><strong>第三阶段：卖结果。</strong>Agent 直接下单、帮用户做决策、交易完成后抽佣。</li></ul>
   <figure class="fig">
-<svg class="f" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大模型平台商业化形式与节奏">
+<svg class="f" viewBox="0 0 720 310" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大模型商业化三阶段路径：卖能力、卖曝光、卖结果">
   <defs>
-    <marker id="timeArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#d85a30" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="stageArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#d85a30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
   </defs>
-  <text class="fh" x="360" y="34" text-anchor="middle" fill="#1a1a1a">大模型平台商业化的四段节奏</text>
-  <text class="fxs" x="360" y="58" text-anchor="middle" fill="#6b6b6b">先证明付费，再承接广告，最后把交易和企业服务做深</text>
+  <text class="fh" x="360" y="34" text-anchor="middle" fill="#1a1a1a">大模型商业化的三步迁移</text>
+  <text class="fxs" x="360" y="58" text-anchor="middle" fill="#6b6b6b">不是一次性找到答案，而是从模型能力，走到决策入口，再走到交易结果</text>
+  <rect x="48" y="96" width="176" height="124" rx="14" fill="#f3f2ee" stroke="#d8d6cf"/>
+  <text class="ft" x="136" y="128" text-anchor="middle" fill="#4a473f">第一阶段：卖能力</text>
+  <text class="fs" x="136" y="158" text-anchor="middle" fill="#666">API / 订阅 / 企业服务</text>
+  <text class="fxs" x="136" y="188" text-anchor="middle" fill="#777">先证明有人愿意付费</text>
+  <rect x="272" y="96" width="176" height="124" rx="14" fill="#faeeda" stroke="#ecb45a"/>
+  <text class="ft" x="360" y="128" text-anchor="middle" fill="#7a4f0b">第二阶段：卖曝光</text>
+  <text class="fs" x="360" y="158" text-anchor="middle" fill="#9a6a14">AI 答案 / 推荐 / 品牌露出</text>
+  <text class="fxs" x="360" y="188" text-anchor="middle" fill="#9a6a14">承接搜索和内容广告</text>
+  <rect x="496" y="96" width="176" height="124" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
+  <text class="ft" x="584" y="128" text-anchor="middle" fill="#0f6e56">第三阶段：卖结果</text>
+  <text class="fs" x="584" y="158" text-anchor="middle" fill="#0a4a3a">Agent 下单 / 决策 / 抽佣</text>
+  <text class="fxs" x="584" y="188" text-anchor="middle" fill="#0a4a3a">按成交和履约收费</text>
+  <line x1="226" y1="158" x2="268" y2="158" stroke="#d85a30" stroke-width="2.2" marker-end="url(#stageArrow)"/>
+  <line x1="450" y1="158" x2="492" y2="158" stroke="#d85a30" stroke-width="2.2" marker-end="url(#stageArrow)"/>
+  <rect x="90" y="252" width="540" height="36" rx="12" fill="#fff7ea" stroke="#f0d9a8"/>
+  <text class="fs" x="360" y="275" text-anchor="middle" fill="#7a4f0b">主线：从“帮你找信息”，升级为“帮你完成结果”</text>
+</svg><figcaption>图 2　三阶段商业化路径：API/订阅 → 广告 → Agent 抽佣</figcaption></figure>
 
-  <line x1="72" y1="116" x2="648" y2="116" stroke="#d85a30" stroke-width="2.2" marker-end="url(#timeArrow)"/>
-  <circle cx="100" cy="116" r="8" fill="#d85a30"/>
-  <circle cx="260" cy="116" r="8" fill="#d85a30"/>
-  <circle cx="430" cy="116" r="8" fill="#d85a30"/>
-  <circle cx="600" cy="116" r="8" fill="#d85a30"/>
-
-  <rect x="34" y="150" width="150" height="138" rx="13" fill="#f3f2ee" stroke="#d8d6cf"/>
-  <text class="ft" x="109" y="178" text-anchor="middle" fill="#4a473f">第一段</text>
-  <text class="fs" x="109" y="204" text-anchor="middle" fill="#555">订阅 + 接口</text>
-  <text class="fxs" x="109" y="230" text-anchor="middle" fill="#777">现在就做</text>
-  <text class="fxs" x="109" y="254" text-anchor="middle" fill="#777">证明有人付费</text>
-
-  <rect x="204" y="150" width="150" height="138" rx="13" fill="#faeeda" stroke="#ecb45a"/>
-  <text class="ft" x="279" y="178" text-anchor="middle" fill="#7a4f0b">第二段</text>
-  <text class="fs" x="279" y="204" text-anchor="middle" fill="#7a4f0b">AI 答案广告</text>
-  <text class="fxs" x="279" y="230" text-anchor="middle" fill="#9a6a14">2026-2027</text>
-  <text class="fxs" x="279" y="254" text-anchor="middle" fill="#9a6a14">承接搜索广告</text>
-
-  <rect x="374" y="150" width="150" height="138" rx="13" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="449" y="178" text-anchor="middle" fill="#0f6e56">第三段</text>
-  <text class="fs" x="449" y="204" text-anchor="middle" fill="#0f6e56">智能体抽佣</text>
-  <text class="fxs" x="449" y="230" text-anchor="middle" fill="#0a4a3a">2027-2028</text>
-  <text class="fxs" x="449" y="254" text-anchor="middle" fill="#0a4a3a">挂成交额放大</text>
-
-  <rect x="544" y="150" width="150" height="138" rx="13" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="619" y="178" text-anchor="middle" fill="#0f6e56">第四段</text>
-  <text class="fs" x="619" y="204" text-anchor="middle" fill="#0f6e56">云 + 解决方案</text>
-  <text class="fxs" x="619" y="230" text-anchor="middle" fill="#0a4a3a">长期</text>
-  <text class="fxs" x="619" y="254" text-anchor="middle" fill="#0a4a3a">企业真付费</text>
-
-  <rect x="58" y="314" width="604" height="32" rx="10" fill="#fff7ea" stroke="#f0d9a8"/>
-  <text class="fxs" x="360" y="335" text-anchor="middle" fill="#7a4f0b">节奏判断：订阅/接口是起点，广告是兜底，智能体抽佣是胜负手，云和解决方案是利润池</text>
-</svg><figcaption>图 2　商业化节奏：先卖能力，再承接广告，最后把交易和企业服务做深</figcaption></figure>
-  <figure class="fig">
-<svg class="f" viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="大模型平台变现的四条腿">
-  <defs><marker id="ar3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#999" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
-  <rect x="34" y="44" width="150" height="86" rx="12" fill="#f3f2ee" stroke="#d8d6cf"/>
-  <text class="ft" x="109" y="70" text-anchor="middle" fill="#4a473f">C 端订阅</text>
-  <text class="fs" x="109" y="94" text-anchor="middle" fill="#8a8780">低付费率 · 高客单</text>
-  <text class="fnum" x="109" y="116" text-anchor="middle" fill="#4a473f">~150 亿</text>
-  <rect x="200" y="44" width="150" height="86" rx="12" fill="#f3f2ee" stroke="#d8d6cf"/>
-  <text class="ft" x="275" y="70" text-anchor="middle" fill="#4a473f">接口调用</text>
-  <text class="fs" x="275" y="94" text-anchor="middle" fill="#8a8780">走量 · 薄毛利</text>
-  <text class="fnum" x="275" y="116" text-anchor="middle" fill="#4a473f">~420 亿</text>
-  <rect x="366" y="44" width="150" height="86" rx="12" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="441" y="70" text-anchor="middle" fill="#0f6e56">平台广告</text>
-  <text class="fs" x="441" y="94" text-anchor="middle" fill="#0a4a3a">里子 · 兜底</text>
-  <text class="fnum" x="441" y="116" text-anchor="middle" fill="#0f6e56">~220 亿</text>
-  <rect x="532" y="44" width="150" height="86" rx="12" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="607" y="70" text-anchor="middle" fill="#0f6e56">智能体抽佣</text>
-  <text class="fs" x="607" y="94" text-anchor="middle" fill="#0a4a3a">挂成交额 · 胜负手</text>
-  <text class="fnum" x="607" y="116" text-anchor="middle" fill="#0f6e56">~160 亿</text>
-  <line x1="109" y1="132" x2="109" y2="176" stroke="#999" stroke-width="1.6" marker-end="url(#ar3)"/>
-  <line x1="275" y1="132" x2="275" y2="176" stroke="#999" stroke-width="1.6" marker-end="url(#ar3)"/>
-  <line x1="441" y1="132" x2="441" y2="176" stroke="#999" stroke-width="1.6" marker-end="url(#ar3)"/>
-  <line x1="607" y1="132" x2="607" y2="176" stroke="#999" stroke-width="1.6" marker-end="url(#ar3)"/>
-  <rect x="60" y="178" width="580" height="62" rx="12" fill="#fcecea" stroke="#e7a39c"/>
-  <text class="ft" x="350" y="202" text-anchor="middle" fill="#8a1f1f">四条腿合计约 950 亿，仍可能填不平成熟期成本</text>
-  <text class="fs" x="350" y="226" text-anchor="middle" fill="#a8453a">注意：这是用公开信息推出来的量级，不是公司披露数据</text>
-  <rect x="218" y="256" width="12" height="12" rx="3" fill="#d8d6cf"/><text class="fxs" x="235" y="263" fill="#6b6b6b">基础盘（订阅·接口）</text>
-  <rect x="408" y="256" width="12" height="12" rx="3" fill="#5dcaa5"/><text class="fxs" x="425" y="263" fill="#6b6b6b">增长主力（广告·抽佣）</text>
-</svg><figcaption>图 3　四条变现腿：成熟期收入约 950 亿，来自订阅、接口调用、广告和智能体抽佣</figcaption></figure>
-  <section class="metrics">
-    <section class="metric amber"><span>四条腿</span><strong>150 + 420 + 220 + 160 亿</strong><em>订阅、接口调用、广告、智能体抽佣，分别按付费率、调用量、流量和成交额测算。</em></section>
-  </section>
-  <p>这组数字不要当成财报预测，而要当成收入结构。订阅约 150 亿，看的是有多少用户愿意为更强能力付费；接口调用约 420 亿，看的是调用量和平均价格；AI 答案广告约 220 亿，看的是旧广告预算能迁移多少；智能体抽佣约 160 亿，看的是它能带来多少可收费的成交结果。</p>
-  <p>四条腿里，接口调用短期最容易放量，但毛利最薄；订阅现金流直接，但国内 C 端付费率有天花板；广告最像互联网旧收入池的迁移；智能体抽佣最慢，但一旦跑通，天花板不再由 token 次数决定，而由交易结果决定。</p>
-  <section class="data-box">
-    <strong>四条腿怎么估</strong>
-    <p><b>依据：</b>订阅的用户规模锚点来自 <a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile</a>；接口单价来自<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>和 <a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek 官方 Pricing</a>；智能体履约和支付闭环参考<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报报道的千问接入淘宝/支付宝/淘宝闪购</a>、<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>、<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / ACP 官方说明</a>和 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>。</p>
-    <p><b>怎么算：</b>订阅收入 = 月活用户 × 付费率 × 每个付费用户年收入，示例约 3.45 亿 × 3%-4% × 1000-1200 元/年，得到百亿级；接口收入 = 调用量 × 平均单价 × 付费比例，示例按用量增长和付费化提升得到约 420 亿；广告收入 = AI 入口流量 × 可商业化比例 × 广告单价，示例按旧广告预算小比例迁移得到约 220 亿；智能体净收入 = 可促成成交额 × 抽成率 × 新增成交比例 - 履约/补贴/售后成本，示例按 2000 亿可促成成交额 × 8% 左右可收费率得到约 160 亿。</p>
-  </section>
-
-  <h2>03 广告为什么会出现：钱会跟着答案迁移</h2>
-  <p>很多人听到“大模型广告”，第一反应是反感：AI 答案里也要塞广告了吗？但从商业逻辑看，广告不是平台突然想出来的新发明，而是旧预算跟着入口迁移。</p>
-  <p>过去用户先搜索，再点链接，再比较信息，再做决策。广告挂在搜索结果、信息流、电商列表和内容推荐里。AI 出现后，越来越多用户不再看十个链接，而是直接看一个答案。入口从“链接列表”变成“单一建议”，品牌自然会关心：答案里有没有我，推荐理由是不是有利，排序靠不靠前。</p>
+  <h2>05 为什么广告是必然的，而不是“想不想做”</h2>
+  <p>很多人会误解一个问题：大模型为什么一定要做广告？</p>
+  <p>答案其实不是战略选择，而是结构迁移。</p>
+  <p>过去互联网是这样的：用户搜索，点击链接，比较信息，再做决策。广告挂在搜索结果、信息流、电商列表里。</p>
+  <p>但 AI 出现后，用户越来越少看十个链接，而是直接看一个答案。</p>
+  <p>这带来一个结构性变化：<strong>入口从“链接列表”变成“单一答案”。</strong></p>
+  <p>于是广告不会消失，只会迁移：从搜索结果迁移到 AI 答案，从信息流迁移到推荐结果，从点击迁移到被“提及”。</p>
   <figure class="fig">
 <svg class="f" viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三级跳双轴迁移图：品牌侧从被搜索到被买单，平台侧从搜索广告到抽佣">
   <defs>
@@ -279,25 +231,28 @@
   <line x1="380" y1="212" x2="380" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
   <line x1="570" y1="212" x2="570" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
   <text class="fxs" x="360" y="320" text-anchor="middle" fill="#6b6b6b">注意：220 亿 / 160 亿是量级推算，不是公司披露收入</text>
-</svg><figcaption>图 4　钱的三级跳：从被搜索，到被 AI 提及，再到被智能体买单</figcaption></figure>
-  <p>这张图是全文题眼。品牌侧从“被搜索”走向“被提及”，再走向“被买单”；平台侧从搜索广告走向 AI 答案广告，再走向智能体抽佣。所谓大模型平台广告，本质不是凭空创造新蛋糕，而是旧的搜索、内容、电商广告预算换了一个入口。</p>
-  <p>所以未来大厂不一定把这件事叫“GEO”。它可能叫 AI 营销、品牌知识库、官方数据接入、智能推荐、商业解释卡、智能体成交统计。名字会变，但底层都是同一件事：把 AI 决策入口里的可见性和成交结果，变成可收费资产。</p>
-  <p>这也是为什么广告必须有边界。AI 答案越像“唯一建议”，广告越接近决策干预。平台可以卖商业化能力，但必须把推荐理由、商业标识、排序边界说清楚。否则短期收入越强，长期信任越薄。</p>
+</svg><figcaption>图 3　广告迁移路径：搜索广告 → AI 答案 → Agent 推荐</figcaption></figure>
+  <section class="callout green"><p><strong>一句话总结：</strong><br>钱不会消失，只是换了入口。</p></section>
 
-  <h2>04 Agent 为什么更关键：用户不是为佣金付费，而是为确定性付费</h2>
-  <p>如果说广告是在影响注意力，Agent 抽佣就是直接参与结果。搜索给用户链接，AI 答案给用户建议，Agent 则把任务推进到下单、支付、履约和售后。商业模式也从“卖曝光”变成“卖完成”。</p>
-  <p>用户为什么会接受 Agent？不是因为用户喜欢给平台交佣金，而是因为它真的能省掉一串麻烦动作：比价、看评价、找优惠、填地址、确认支付、查物流、处理售后。只要 Agent 做到三件事：更省时间、不更贵、结果可靠，用户就很难退回原来的复杂路径。</p>
-  <p>所以 Agent 抽佣的本质，不是“平台凭空多收一笔钱”，而是平台替用户完成搜索、比较、决策和履约之后，从商家侧或服务侧按结果收费。用户真正买到的，是少做决策、少花时间、少踩坑。</p>
-  <section class="mini-grid">
-    <section class="mini green"><strong>省时间</strong><span>不用搜、看、比、切 App，任务从十几分钟压缩到一句话。</span></section>
-    <section class="mini green"><strong>省决策</strong><span>用户不想研究所有选项，只想要一个足够可靠的选择。</span></section>
-    <section class="mini green"><strong>省操作</strong><span>比价、优惠券、地址、支付、售后都能被串起来。</span></section>
-    <section class="mini amber"><strong>可追责</strong><span>授权、支付、售后、解释机制做清楚，用户才会把 Agent 当服务，而不只是工具。</span></section>
-  </section>
-  <p>但这里有一个前提：被提及不等于被选中，被选中也不等于能成交。一个品牌如果商品数据不完整、价格不可读、库存不透明、售后规则不清楚，就算出现在 AI 答案里，也很难进入最后的成交链路。Agent 时代真正重要的是：让机器能理解你、比较你、信任你，并替用户完成交易。</p>
+  <h2>06 为什么 Agent 抽佣是第二条必然路径</h2>
+  <p>如果说广告是“迁移”，那 Agent 是“升级”。</p>
+  <p>关键变化是，过去用户自己做所有决策：比价、选商品、看评价、填信息、下单。未来则变成：用户只说目标，Agent 负责执行。</p>
+  <p>比如，“帮我点个附近评分最高的外卖”；“帮我订一张性价比最高的机票”；“帮我选一个适合送礼的商品”。</p>
+  <p>只要 Agent 做到三件事：更省时间、不更贵、结果可靠，用户就会接受它替代自己决策。</p>
+  <p>而一旦这件事发生，商业模式自然会从“信息收费”变成“交易抽佣”。</p>
+  <section class="callout green"><p><strong>本质变化是：</strong><br>从“帮你找信息”，变成“帮你完成结果”。</p></section>
 
-  <h2>05 为什么千问更积极，豆包更克制</h2>
-  <p>同样是 Agent 商业化，不同平台的速度不会一样。差异不主要来自技术，而来自旧业务。新入口如果是在放大旧业务，公司就会快；如果会吃掉自己的旧收入，公司就会慢。</p>
+  <h2>07 三个玩家，三种完全不同的路径</h2>
+  <h3>① 千问（阿里）</h3>
+  <p>千问背后是淘宝、支付宝、本地生活和履约体系。它的优势是有完整交易闭环。</p>
+  <p>所以 Agent 对它来说，不是破坏体系，而是增强体系。它可以更激进地做“直接下单”。</p>
+  <h3>② 豆包（字节）</h3>
+  <p>豆包背后是内容流、广告系统、种草链路和电商转化。问题在于，Agent 会缩短“内容 → 种草 → 转化”的路径。</p>
+  <p>这意味着，用户可以直接成交，广告曝光减少，投流链路变短。豆包面临的不是单纯的产品选择，而是新入口和旧广告系统之间的内部矛盾。</p>
+  <p>这也是为什么它更克制。</p>
+  <h3>③ DeepSeek</h3>
+  <p>DeepSeek 没有同等级的交易系统，也没有同等级的广告体系。它更可能走低价、中立、基础模型路线。</p>
+  <p>它的优势反而是：不被商业化路径绑架。</p>
   <figure class="fig">
 <svg class="f" viewBox="0 0 700 332" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="谁先做谁后做的决策矩阵">
   <text class="fxs" x="40" y="30" fill="#999">玩家</text>
@@ -336,109 +291,59 @@
   <text class="fs" x="554" y="284" fill="#444">底层模型心智</text>
   <line x1="40" y1="302" x2="680" y2="302" stroke="#eee"/>
   <text class="fxs" x="40" y="324" fill="#6b6b6b">决策因素：① 现有盘是否被蚕食（最关键）　② 生态/履约　③ 成本　④ 用户购物心智　⑤ 合规</text>
-</svg><figcaption>图 5　谁的现有饭碗会被自己的 AI 吃掉，谁就慢</figcaption></figure>
-  <p>千问背后是淘宝、支付宝、淘宝闪购、本地生活和出行。对阿里来说，Agent 下单是把交易入口前移，不是推翻旧交易体系。它本来就靠交易和履约赚钱，所以更适合积极推进“AI 直接办事”。</p>
-  <p>豆包背后是内容流、广告系统、种草链路和电商转化。对字节来说，Agent 如果直接把用户带到成交，确实提升了用户效率，但也可能压缩“刷内容、被种草、看广告、进直播间或商品页、再下单”的旧链路。旧链路里有广告、投流、推荐排序和内容分发收益，这就是豆包必须谨慎的地方。</p>
-  <p>DeepSeek 则是另一种路径。它没有同等级的广告、电商和本地生活履约体系，所以更容易强化低价、中立、开放、少商业干扰的模型心智。当豆包和千问越来越商业化，DeepSeek 反而可能成为很多开发者和垂直 Agent 背后的底层能力。</p>
-  <section class="callout amber"><p><strong>这就是“自我蚕食税”：</strong><br>当一个新产品会吃掉自己的老收入，每往前走一步，都要先计算它会损失多少旧账。千问的税低，所以更快；豆包的税更高，所以更克制；DeepSeek 没有同样的旧商业化包袱，所以会更像中立模型底座。</p></section>
+</svg><figcaption>图 4　三大玩家路径对比：千问是交易闭环，豆包是内容入口，DeepSeek 是基础模型</figcaption></figure>
+
+  <h2>08 真正的本质：不是模型竞争，是入口竞争</h2>
+  <p>如果把所有东西压缩成一句话：<strong>大模型不是在卖能力，而是在争夺下一代入口。</strong></p>
+  <p>入口一旦变了，搜索广告会变，内容分发会变，电商转化链路会变，甚至“决策权”本身都会被重新定价。</p>
   <figure class="fig">
-<svg class="f" viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="自我蚕食税数字示例：同一笔订单传统链路与智能体直达的收费对比">
-  <text class="fh" x="360" y="32" text-anchor="middle" fill="#1a1a1a">自我蚕食税：同一笔订单，路径变短，可收费环节变少</text>
-  <text class="fxs" x="360" y="56" text-anchor="middle" fill="#6b6b6b">假设一笔 ¥1000 订单（仅为说明机制的场景，非任何公司数据）</text>
-
-  <text class="ft" x="40" y="116" fill="#4a473f">传统“逛”链路</text>
-  <text class="fxs" x="40" y="138" fill="#777">种草 · 投流 · 比较 · 下单</text>
-  <rect x="210" y="96" width="165" height="44" rx="8" fill="#faeeda" stroke="#ecb45a"/>
-  <rect x="375" y="96" width="55" height="44" rx="8" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="fnum" x="452" y="124" fill="#7a4f0b">20%　¥200</text>
-
-  <text class="ft" x="40" y="210" fill="#0f6e56">智能体直达</text>
-  <text class="fxs" x="40" y="232" fill="#777">一句话 · 比价 · 支付</text>
-  <rect x="210" y="190" width="55" height="44" rx="8" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <rect x="265" y="190" width="33" height="44" rx="8" fill="#eef7f2" stroke="#a9d8c6"/>
-  <text class="fnum" x="320" y="218" fill="#0f6e56">8%　¥80</text>
-
-  <rect x="210" y="262" width="13" height="13" rx="3" fill="#faeeda" stroke="#ecb45a"/><text class="fxs" x="230" y="273" fill="#6b6b6b">投流广告 ≈15%</text>
-  <rect x="350" y="262" width="13" height="13" rx="3" fill="#e1f5ee" stroke="#5dcaa5"/><text class="fxs" x="370" y="273" fill="#6b6b6b">基础佣金 ≈5%</text>
-  <rect x="480" y="262" width="13" height="13" rx="3" fill="#eef7f2" stroke="#a9d8c6"/><text class="fxs" x="500" y="273" fill="#6b6b6b">推荐加权 ≈3%（智能体新增）</text>
-
-  <rect x="60" y="296" width="600" height="46" rx="12" fill="#fcecea" stroke="#e7a39c"/>
-  <text class="fs" x="360" y="324" text-anchor="middle" fill="#8a1f1f">差额约 12 个百分点（¥120）＝自我蚕食税：投流环节流失，竞价加权只补回约 3%</text>
-</svg><figcaption>图 6　自我蚕食税示例：同一笔订单，Agent 直达会压缩原来的广告和投流链路</figcaption></figure>
-  <section class="metrics">
-    <section class="metric amber"><span>自我蚕食税</span><strong>20% → 8%</strong><em>传统路径收费比例与智能体直达收费比例的场景对比。</em></section>
-  </section>
-  <p>一笔 ¥1000 的订单，如果走传统“逛”的链路，平台可能拿到约 15% 的投流广告加约 5% 的基础佣金，合计约 20%（传统路径收费比例）；如果智能体替用户直接比价下单，省掉了“逛”，原来约 15% 的投流大部分消失，平台只能靠约 5% 的基础佣金，再加上为“被优先推荐”新设的约 3% 竞价加权，合计约 8%（智能体直达可收费比例）。中间约 12 个百分点的差额（20% - 8%），就是平台推进智能体时要消化的自我蚕食税。</p>
-  <section class="data-box">
-    <strong>这个例子怎么看</strong>
-    <p><b>依据：</b>可验证的事实锚点是：<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">千问已经接入淘宝、淘宝闪购和支付宝 AI 付</a>，证明交易型智能体的路径已经出现；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>说明智能体支付、工具接入等能力正在被产品化。字节内容电商和信息流广告的具体收费比例并非官方披露，本文不使用固定百分比。</p>
-    <p><b>怎么算：</b>自我蚕食税 = 成交额 × (传统路径收费比例 - 智能体直达收费比例) × 被替代比例。只有这些比例来自具体业务数据时，才可以落到金额；否则只能作为机制公式。</p>
-  </section>
-
-  <h2>06 亏的是豆包，赚的是字节？要看两本账</h2>
-  <p>现在再回到标题：为什么看起来豆包在亏钱，字节还要继续做？答案是，豆包自己的账和字节集团的账不是一回事。</p>
-  <figure class="fig">
-<svg class="f" viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="豆包的账与字节的账对照">
-  <rect x="30" y="46" width="270" height="200" rx="14" fill="#fcecea" stroke="#e7a39c"/>
-  <text class="ft" x="165" y="80" text-anchor="middle" fill="#8a1f1f">豆包自己的账</text>
-  <text class="fs" x="165" y="104" text-anchor="middle" fill="#a8453a">（官方未披露独立损益）</text>
-  <text x="165" y="154" text-anchor="middle" fill="#c0392b" style="font-size:30px;font-weight:800;">成本硬</text>
-  <text class="fs" x="165" y="192" text-anchor="middle" fill="#a8453a">收入、成本、亏损均需测算</text>
-  <rect x="330" y="46" width="340" height="200" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="500" y="78" text-anchor="middle" fill="#0f6e56">字节集团的账（看不见的赚）</text>
-  <text class="fs" x="352" y="118" fill="#0a4a3a">· 防御：守住字节/抖音商业化基本盘</text>
-  <text class="fs" x="352" y="150" fill="#0a4a3a">· 赋能：广告 / 电商提效，记在别处</text>
-  <text class="fs" x="352" y="182" fill="#0a4a3a">· 企业云：火山引擎真付费</text>
-  <text class="fs" x="352" y="214" fill="#0a4a3a">· 图片视频 / 智能体 / 期权：长期增量</text>
-  <rect x="30" y="266" width="640" height="56" rx="12" fill="#f3f2ee" stroke="#d8d6cf"/>
-  <text class="ft" x="350" y="294" text-anchor="middle" fill="#4a473f">用阶段性投入，守入口、提效率，并撬动真付费的云</text>
-</svg><figcaption>图 7　两本账：豆包自己的账可能承压，但集团账本里有入口防御、商业化提效、企业云和长期机会</figcaption></figure>
-  <p>豆包自己的账，看到的是 C 端免费、接口价格竞争、训练和推理成本、带宽存储、研发获客。它短期未必好看。字节集团的账，看到的是下一代入口防御、广告理解能力升级、电商转化效率提升、火山引擎企业服务，以及图片、视频、办公工具等长期机会。</p>
-  <p>这不是说任何亏损都合理。更准确的说法是：豆包值不值得做，不能只问“豆包 App 能不能盈利”，还要问“不做 AI 入口，字节未来会不会被别人截流”。如果 AI 对话框和 Agent 执行链路真的成为新入口，那么现在的投入更像一张入口保险单。</p>
-  <section class="callout amber"><p><strong>还要小心一个常见误区：</strong><br>“万亿市场”不等于“平台收入”。比如 AI 客服、AI 销售、AI 办公确实能替代一部分人力和软件支出，但平台最终能拿到的钱，要经过替代率、企业愿付比例、模型/云层分成三道折扣。</p></section>
-  <figure class="fig">
-<svg class="f" viewBox="0 0 720 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="市场规模不等于平台收入：万亿市场经过三道折扣后只剩百亿量级">
+<svg class="f" viewBox="0 0 720 320" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="互联网入口迁移：搜索框、信息流、AI 对话、Agent 执行">
   <defs>
-    <marker id="capAr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#d85a30" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="entryArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#d85a30" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></marker>
   </defs>
-  <text class="fh" x="360" y="32" text-anchor="middle" fill="#1a1a1a">“万亿市场”不等于平台收入：要过三道折扣</text>
-  <text class="fxs" x="360" y="56" text-anchor="middle" fill="#6b6b6b">以一块约 1 万亿的人力 / 软件替代市场为例（假设场景，非任何公司数据）</text>
+  <text class="fh" x="360" y="34" text-anchor="middle" fill="#1a1a1a">入口迁移：搜索框 → 信息流 → AI 对话 → Agent 执行</text>
+  <text class="fxs" x="360" y="58" text-anchor="middle" fill="#6b6b6b">入口越靠近决策和交易，平台越能把“帮用户省事”变成商业化能力</text>
+  <rect x="34" y="100" width="140" height="108" rx="14" fill="#f3f2ee" stroke="#d8d6cf"/>
+  <text class="ft" x="104" y="132" text-anchor="middle" fill="#4a473f">搜索框</text>
+  <text class="fs" x="104" y="162" text-anchor="middle" fill="#666">用户找链接</text>
+  <text class="fxs" x="104" y="188" text-anchor="middle" fill="#777">关键词广告</text>
+  <rect x="204" y="100" width="140" height="108" rx="14" fill="#faeeda" stroke="#ecb45a"/>
+  <text class="ft" x="274" y="132" text-anchor="middle" fill="#7a4f0b">信息流</text>
+  <text class="fs" x="274" y="162" text-anchor="middle" fill="#9a6a14">平台推内容</text>
+  <text class="fxs" x="274" y="188" text-anchor="middle" fill="#9a6a14">曝光与种草</text>
+  <rect x="374" y="100" width="140" height="108" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
+  <text class="ft" x="444" y="132" text-anchor="middle" fill="#0f6e56">AI 对话</text>
+  <text class="fs" x="444" y="162" text-anchor="middle" fill="#0a4a3a">平台给答案</text>
+  <text class="fxs" x="444" y="188" text-anchor="middle" fill="#0a4a3a">被提及 / 被推荐</text>
+  <rect x="544" y="100" width="140" height="108" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
+  <text class="ft" x="614" y="132" text-anchor="middle" fill="#0f6e56">Agent 执行</text>
+  <text class="fs" x="614" y="162" text-anchor="middle" fill="#0a4a3a">平台做结果</text>
+  <text class="fxs" x="614" y="188" text-anchor="middle" fill="#0a4a3a">交易抽佣</text>
+  <line x1="176" y1="154" x2="200" y2="154" stroke="#d85a30" stroke-width="2.2" marker-end="url(#entryArrow)"/>
+  <line x1="346" y1="154" x2="370" y2="154" stroke="#d85a30" stroke-width="2.2" marker-end="url(#entryArrow)"/>
+  <line x1="516" y1="154" x2="540" y2="154" stroke="#d85a30" stroke-width="2.2" marker-end="url(#entryArrow)"/>
+  <rect x="70" y="252" width="580" height="38" rx="12" fill="#fff7ea" stroke="#f0d9a8"/>
+  <text class="fs" x="360" y="276" text-anchor="middle" fill="#7a4f0b">真正变化：广告、交易和决策权，都会跟着入口一起迁移</text>
+</svg><figcaption>图 5　入口迁移图：搜索框 → 信息流 → AI 对话 → Agent 执行</figcaption></figure>
 
-  <rect x="36" y="92" width="150" height="104" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="111" y="130" text-anchor="middle" fill="#0f6e56">市场盘子</text>
-  <text class="fnum" x="111" y="160" text-anchor="middle" fill="#0f6e56">≈ 1 万亿</text>
-  <text class="fxs" x="111" y="183" text-anchor="middle" fill="#0a4a3a">被替代的人力支出</text>
+  <h2>09 最后一个更底层的结论</h2>
+  <p>回到最开始的问题：为什么看起来豆包在亏钱，但字节还在继续做？</p>
+  <p>因为你看到的是“产品账”，但它算的是“集团账”。</p>
+  <p>豆包本身可能是高成本、低直接收入、强补贴。但在集团层面，它的价值是下一代入口、广告理解能力升级、电商转化效率提升，以及长期 AI 操作系统入口。</p>
+  <p>所以“亏的是豆包，赚的是字节”，更准确地说，不是豆包亏损不重要，而是豆包不能只按一个独立 App 的短期损益来理解。它更像字节押注下一代入口的一张期权。</p>
 
-  <text class="ft" x="360" y="92" text-anchor="middle" fill="#7a4f0b">三道折扣</text>
-  <rect x="250" y="104" width="220" height="30" rx="8" fill="#faeeda" stroke="#ecb45a"/><text class="fs" x="360" y="124" text-anchor="middle" fill="#7a4f0b">① × AI 可替代率</text>
-  <rect x="250" y="140" width="220" height="30" rx="8" fill="#faeeda" stroke="#ecb45a"/><text class="fs" x="360" y="160" text-anchor="middle" fill="#7a4f0b">② × 企业愿意支付比例</text>
-  <rect x="250" y="176" width="220" height="30" rx="8" fill="#faeeda" stroke="#ecb45a"/><text class="fs" x="360" y="196" text-anchor="middle" fill="#7a4f0b">③ × 模型 / 云层分成</text>
+  <h2>结语</h2>
+  <p>大模型商业化的本质不是“模型怎么收费”，而是一个更大的问题：<strong>谁能定义下一代互联网入口。</strong></p>
+  <p>当入口从搜索框变成 AI 对话框，再变成 Agent 执行链路之后，广告会迁移，交易会迁移，决策也会迁移。</p>
+  <p>最终留下来的问题只有一个：谁能在不破坏旧体系的情况下，接住新入口。</p>
 
-  <rect x="534" y="92" width="150" height="104" rx="14" fill="#e1f5ee" stroke="#5dcaa5"/>
-  <text class="ft" x="609" y="130" text-anchor="middle" fill="#0f6e56">平台可记账</text>
-  <text class="fnum" x="609" y="160" text-anchor="middle" fill="#0f6e56">≈ 150 亿</text>
-  <text class="fxs" x="609" y="183" text-anchor="middle" fill="#0a4a3a">且多记在企业云</text>
-
-  <line x1="188" y1="155" x2="246" y2="155" stroke="#d85a30" stroke-width="2.2" marker-end="url(#capAr)"/>
-  <line x1="472" y1="155" x2="530" y2="155" stroke="#d85a30" stroke-width="2.2" marker-end="url(#capAr)"/>
-
-  <rect x="60" y="244" width="600" height="40" rx="12" fill="#fff7ea" stroke="#f0d9a8"/>
-  <text class="fxs" x="360" y="269" text-anchor="middle" fill="#7a4f0b">市场≠收入：三道折扣连乘后，落到模型平台的常只剩个位数百分比，且多记在企业云而非广告 / 抽佣</text>
-</svg><figcaption>图 8　市场规模不等于平台收入：三道折扣之后，落到模型平台的往往只剩一部分</figcaption></figure>
-
-  <h2>结尾：真正的竞争，不是模型强弱，而是入口账本</h2>
-  <p>大模型商业化的本质，不是模型怎么收费，而是入口怎么迁移。过去的钱在搜索框、信息流和电商货架里；未来一部分钱会进入 AI 答案和 Agent 执行链路。广告迁移，是因为答案变成入口；Agent 抽佣，是因为执行变成结果。</p>
-  <p>所以，未来的大模型平台不会只比谁模型更强，也会比谁更懂交易、谁更有履约、谁更能守住用户信任，以及谁能在不摧毁旧收入的情况下接住新入口。</p>
-  <p>千问会把交易闭环前置，豆包会在内容消费入口和旧广告链路之间找平衡，DeepSeek 会继续强化低价中立的底层模型心智。最后留下来的，不一定是最会聊天的模型，而是最能把“帮用户做决定”变成可信商业入口的平台。</p>
-  <section class="quote">大模型平台真正要卖的，不只是智能，而是入口、决策和结果。</section>
-
-  <h2>数据说明与参考口径</h2>
+  <h2>数据口径说明</h2>
   <section class="note">
-    <p><strong>① 官方 / 权威数据锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎 120 万亿 Token 的报道</a>用于核对豆包调用量；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对 AI 原生 App、豆包、千问、DeepSeek 的月活用户和活跃率；<a href="https://www.volcengine.com/docs/82379/1544106">火山方舟模型价格页</a>用于核对豆包模型调用价格；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek 官方 API Pricing</a>用于核对 DeepSeek 输入、输出和缓存命中价格；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付、工具接入等产品化能力。</p>
-    <p><strong>② 公开报道 / 行业趋势锚点：</strong><a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报关于千问接入淘宝、淘宝闪购、支付宝的报道</a>用于核对交易型智能体的真实产品路径；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol 官方说明</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对海外智能体交易协议路径；<a href="https://36kr.com/p/3825724108873987">36 氪《2026 AI 重构下的社交媒体营销趋势报告》相关报道</a>与<a href="https://www.miaozhen.com/all-reports/industryinsight/9653.html">秒针《中国数字营销趋势报告》</a>用于观察广告预算和营销入口变化趋势；不直接纳入平台收入测算。</p>
-    <p><strong>③ 未披露数据处理：</strong>豆包独立收入、成本、亏损，四条变现腿的具体金额，智能体抽佣率，自我蚕食比例，均不是公司披露数据。文中 230 亿、1350 亿、1120 亿、950 亿、2400 亿、1450 亿，以及订阅 150 亿、接口调用 420 亿、广告 220 亿、智能体抽佣 160 亿，均为公开信息推算的量级，用来讨论商业逻辑，不代表公司真实财务结果。核心公式为：收入 = 规模 × 单价/费率 × 转化比例；成本 = 回答服务 + 训练摊销 + 带宽存储 + 研发 + 获客运营。</p>
-    <p><strong>④ 接口单价口径：</strong>接口收入测算以官方价格页的分项价格为基准。不同模型、输入/输出、长文本长度、缓存命中、折扣和地域都会影响平均单价；文章中所有接口收入均按“平均单价 × 用量 × 付费比例”处理。</p>
+    <p><strong>1. 事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>、<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>、<a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 支付和交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
+    <p><strong>2. 推算数据：</strong>128 亿 API 收入、230 亿总收入、1350 亿成本、950 亿成熟收入、2400 亿成熟成本、1120 亿 / 1450 亿缺口，均属于量级测算，不是公司财报。核心公式是：接口收入 = token 调用量 ÷ 100 万 × 平均单价 × 天数；覆盖率 = 收入 ÷ 成本；缺口 = 成本 - 收入。</p>
+    <p><strong>3. 战略判断：</strong>广告会迁移到 AI 答案，Agent 会成为长期胜负手，千问更激进、豆包更克制、DeepSeek 更中立，均属于基于公开事实和商业逻辑的判断，不是公司披露结论。</p>
   </section>
+  
 </main>
 </body>
 </html>
