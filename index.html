@@ -88,10 +88,11 @@
 
   <h2>01 先别谈商业化，先算一笔最朴素的账</h2>
   <p>要理解大模型平台到底能不能靠“卖模型能力”活下来，需要先看一个最基础的问题：模型到底赚多少钱？成本又是多少？</p>
-  <p>我们用一个非常朴素的方式拆一下。这里不是财报，而是量级推算。</p>
-  <ul><li>日均 token 调用量：约 120 万亿 token/天（来源：<a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报引述火山引擎披露</a>）</li><li>换算后：约 1.2 亿个“百万 token 单位/天”（由 120 万亿 ÷ 100 万换算）</li><li>每百万 token 平均收入假设：约 0.3 元（测算假设，推测的）</li></ul>
+  <p>我们先拿豆包做一个样本，用非常朴素的方式拆一下。这里不是豆包或字节的财报，而是以公开披露的豆包调用量为锚点，做一个量级推算。</p>
+  <ul><li>样本口径：豆包大模型，不是全行业平均值</li><li>日均 token 调用量：约 120 万亿 token/天（来源：<a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报引述火山引擎披露</a>）</li><li>换算后：约 1.2 亿个“百万 token 单位/天”（由 120 万亿 ÷ 100 万换算）</li><li>每百万 token 有效收入假设：约 0.3 元（测算假设，推测的；不是官方 API 标价）</li></ul>
   <p>那么，每天收入约等于 1.2 亿 × 0.3 元，也就是约 3600 万元。再乘以 365 天，每年大约是 131 亿元级别（推测的）。</p>
-  <p>考虑免费用户、折扣定价、不同模型混合调用，以及企业/API 的价格差异，比较合理的结论是：<strong>接口收入大致在百亿级，而不是千亿级（推测的）。</strong></p>
+  <p>为什么不用公开 API 标价直接乘 120 万亿？因为这个调用量更接近“总使用量”，里面可能混有免费 C 端使用、企业折扣、缓存命中、内部调用和不同模型组合。这里用 0.3 元，是在做一个“全量 token 被平均摊薄后，每百万 token 最终能变成多少收入”的有效变现假设。</p>
+  <p>考虑免费用户、折扣定价、不同模型混合调用，以及企业/API 的价格差异，比较合理的结论是：<strong>模型调用收入大致在百亿级，而不是千亿级（推测的）。</strong></p>
   <section class="callout amber"><p><strong>真正的问题不是“百亿收入少不少”。</strong><br>真正的问题是，调用量已经是超级互联网级别，但收入仍然只是百亿级。</p></section>
 
   <h2>02 更关键的问题：成本是另一条完全不同的曲线</h2>
@@ -342,8 +343,8 @@
 
   <h2>数据口径说明</h2>
   <section class="note">
-    <p><strong>1. 有公开论据的事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付能力；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
-    <p><strong>2. 公式推算 / 推测数据：</strong>0.3 元/百万 token 的平均收入假设、128 亿 API 收入、230 亿总收入、1350 亿成本、950 亿成熟收入、2400 亿成熟成本、1120 亿 / 1450 亿缺口、220 亿 AI 答案广告、160 亿 Agent 抽佣，均属于量级测算或情景推演，不是公司财报。核心公式是：接口收入 = token 调用量 ÷ 100 万 × 平均单价 × 天数；覆盖率 = 收入 ÷ 成本；缺口 = 成本 - 收入。</p>
+    <p><strong>1. 有公开论据的事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎披露豆包大模型 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.volcengine.com/docs/82379/1544106?lang=zh">火山方舟模型价格页</a>用于核对官方价格口径；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付能力；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
+    <p><strong>2. 公式推算 / 推测数据：</strong>0.3 元/百万 token 的有效收入假设、约 131 亿模型调用收入、230 亿总收入、1350 亿成本、950 亿成熟收入、2400 亿成熟成本、1120 亿 / 1450 亿缺口、220 亿 AI 答案广告、160 亿 Agent 抽佣，均属于量级测算或情景推演，不是公司财报。核心公式是：模型调用收入 = token 调用量 ÷ 100 万 × 有效收入单价 × 天数；覆盖率 = 收入 ÷ 成本；缺口 = 成本 - 收入。特别注意：120 万亿 token 是豆包大模型公开使用量锚点，不等于“全部都是可收费外部 API 调用”。</p>
     <p><strong>3. 图示口径：</strong>图 1 的收入、成本、缺口为推测的；图 2 的三阶段商业化路径为推测的；图 3 的广告迁移方向是战略判断，其中 220 亿 / 160 亿为推测的；图 4 中千问接入淘宝 / 闪购 / 支付宝属于公开事实，其余玩家路径判断为推测的；图 5 的入口迁移属于趋势判断，为推测的。</p>
     <p><strong>4. 阅读方式：</strong>文中“推测的”不是公司披露结果，而是为了说明商业逻辑和量级关系；有公开论据的数据用于做事实锚点，推测数据用于呈现变量关系。</p>
   </section>
