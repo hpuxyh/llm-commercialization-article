@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大模型商业化：微信公众号一键复制版</title>
+<style>
+  :root{--ink:#1a1a1a;--muted:#6b6b6b;--teal:#0f6e56;--paper:#fffdf8;--page:#f4f1eb;}
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",Arial,sans-serif;line-height:1.9;-webkit-font-smoothing:antialiased;}
+  .toolbar{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e6e0d4;padding:12px 14px;display:flex;gap:10px;align-items:center;justify-content:center;box-shadow:0 4px 18px rgba(0,0,0,.04);}
+  button{appearance:none;border:0;border-radius:10px;background:#0f6e56;color:#fff;font-size:15px;font-weight:800;padding:10px 16px;cursor:pointer;}
+  .hint{font-size:13px;color:#6b6b6b;}
+  .wrap{max-width:760px;margin:0 auto;background:var(--paper);padding:48px 28px 82px;}
+  .kicker{margin:0 0 14px;color:var(--teal);font-size:13px;font-weight:800;letter-spacing:1px;}
+  h1{margin:0 0 26px;padding:8px 0 20px;border-bottom:1px solid #e6e0d4;text-align:center;font-size:30px;line-height:1.32;font-weight:850;letter-spacing:0;color:#151515;}
+  h2{margin:48px 0 20px;padding:12px 14px;border-left:6px solid var(--teal);border-radius:0 10px 10px 0;background:#f2faf6;font-size:22px;line-height:1.45;color:#151515;}
+  h3{margin:30px 0 12px;padding:4px 0 4px 10px;border-left:3px solid #5dcaa5;font-size:18px;line-height:1.55;color:var(--teal);}
+  p{margin:18px 0;font-size:17px;line-height:1.95;color:#282828;}
+  strong{font-weight:800;color:#111;}
+  ul{margin:16px 0 20px;padding:0;list-style:none;}
+  li{position:relative;margin:12px 0;padding-left:22px;font-size:16.5px;line-height:1.9;color:#2a2a2a;}
+  li::before{content:"";position:absolute;left:5px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--teal);}
+  p a,li a{color:var(--teal);text-decoration:none;border-bottom:1px solid #b7d8cc;}
+  .callout{margin:24px 0;padding:18px 18px;border-radius:14px;border:1px solid #d9ebe4;background:#f6faf7;}
+  .callout.amber{background:#fff7ea;border-color:#f0d9a8;}
+  .callout.red{background:#fff1ef;border-color:#efc7be;}
+  .callout p{margin:0;font-size:16px;line-height:1.85;}
+  .calc-note{margin:10px 0 22px;padding:12px 14px 11px;border-radius:10px;background:#f8f6f0;border:1px solid #e8dfce;border-left:3px solid #d6a148;}
+  .calc-note strong{display:block;margin-bottom:5px;font-size:13.5px;line-height:1.6;color:#7a4f0b;}
+  .calc-note p{margin:5px 0;font-size:13.2px;line-height:1.78;color:#5f5a50;}
+  .note{margin:26px 0;padding:16px 17px;border-radius:12px;background:#f5f3ee;color:#5f5a50;font-size:14px;line-height:1.85;}
+  .note p{margin:8px 0;font-size:14px;color:#5f5a50;line-height:1.85;}
+  @media (max-width:520px){.wrap{padding:38px 20px 70px;}h1{font-size:27px;}h2{font-size:21px;}p{font-size:16.5px;}.toolbar{flex-direction:column;align-items:stretch;}button{width:100%;}}
+</style>
+</head>
+<body>
+<div class="toolbar">
+  <button id="copyBtn">复制无图全文到剪贴板</button>
+  <span class="hint" id="copyStatus">复制后可直接粘贴到微信公众号编辑器</span>
+</div>
+<main class="wrap" id="copySource">
+  
+  <p class="kicker">深度 · 商业化框架 · 公众号版</p>
+  <h1>亏的是豆包，赚的是字节？<br>大模型商业化真正算的是入口账</h1>
+  <p>有一个很有意思的现象。</p>
+  <p>如果你同时用过不同大模型产品，可能会发现：AI 已经不只是回答问题了。千问可以接入淘宝、闪购和支付宝；豆包也已经开始支持商品卡、“帮你选”和购物下单。</p>
+  <p>也就是说，问题已经不是“大模型会不会卖货”，而是：为什么它们一定会走到交易入口这一步？以及不同平台为什么节奏不一样？</p>
+  <p>表面看，这是产品功能差异。</p>
+  <p>但如果往深一层看，这其实不是“技术路线不同”，而是<strong>商业化账本完全不同</strong>。</p>
+  <p>先把事实边界说清楚：公开资料能证明豆包和千问都在试水购物入口，但还不能证明它们已经在 AI 对话里售卖广告位，也不能证明 AI 下单本身已经单独向商家抽佣。所以下文谈到“商业推荐”和“交易分成”时，指的是远期情景推算，不是当前已发生的收入事实。</p>
+
+  <h2>01 先算 API 的天花板</h2>
+  <p>大模型平台最先能收费的地方，是 API 和 token。这个收入看起来很直接：调用越多，收入越高。</p>
+  <p>但如果认真算一遍，会发现它很难单独撑起一个超级入口。</p>
+  <p>我们先拿豆包做样本。这里不是豆包或字节的财报，而是以公开披露的豆包调用量为锚点，做一个量级推算。</p>
+  <p>豆包大模型公开披露的日均调用量已经到约 120 万亿 token。这个规模很大，但它不能直接按官方 API 标价相乘，因为里面不全是可收费的外部 API。</p>
+  <p>为了让这笔账更容易看，本文用一个简化情景：假设这 120 万亿 token 里，约 60% 来自 C 端免费使用、内部调用、缓存命中和其他不直接收费的场景；约 40% 来自 API 或企业客户，可以进入结算。</p>
+  <p>再假设这 40% 可收费 token 的平均结算价约为 0.75 元/百万 token（推测的）。这个价格低于官方标价，是因为大客户折扣、输入输出结构、低价模型和不同调用场景都会拉低平均到手价格。这样摊到全部 token 上，就是 40% × 0.75 元 ≈ 0.3 元/百万 token。</p>
+  <p>按这个简化口径，豆包模型调用收入大约是 131 亿元级别（推测的）。即使把全量摊薄后的价格提高到 0.8 元，年化也只有约 350 亿元（推测的）。</p>
+  <p>这已经不是小生意，但问题在于：大模型平台面对的不是百亿级成本，而是千亿级投入。</p>
+  <section class="callout amber"><p><strong>第一层结论是：</strong><br>API 能证明大模型有收入，但它更像第一条收入腿，不是足以覆盖入口级投入的全部答案。</p></section>
+  <section class="calc-note">
+    <strong>本节口径</strong>
+    <p>样本口径：豆包大模型，不是全行业平均值。公开锚点是豆包大模型日均调用量约 120 万亿 token/天（来源：<a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报引述火山引擎披露</a>）。</p><p>价格口径：官方 API 标价不低。以豆包 1.6 的主流 0-32K 输入区间为例，输入 0.8 元/百万 token、输出 8 元/百万 token；按 3:1 输入输出比例折算，综合价约 2.6 元/百万 token。但 120 万亿 token 不是全部都按这个价格对外收费，所以不能直接用官方标价乘总量。</p><p>0.3 元怎么理解：本文为了便于读者理解，采用一个简化情景：60% token 不直接收费，40% token 进入 API/企业结算；这 40% 的平均到手价按约 0.75 元/百万 token 估算。于是全量摊薄价 = 40% × 0.75 ≈ 0.3 元/百万 token。这里的 60%、40% 和 0.75 元都不是公司披露数据，而是为了做量级测算的简化假设。</p><p>收入计算：120 万亿 ÷ 100 万 = 1.2 亿个“百万 token 单位/天”；1.2 亿 × 0.3 元 ≈ 3600 万元/天；3600 万元 × 365 ≈ 131 亿元/年。若全量摊薄价提高到 0.5 元，年化约 219 亿元；提高到 0.8 元，年化约 350 亿元。</p>
+  </section>
+
+  <h2>02 成本一放进来，问题就变成缺口</h2>
+  <p>只看 131 亿，会误判；只看 350 亿，也会误判。</p>
+  <p>因为大模型真正的成本结构，不是“开发完以后边际成本趋近于零”的互联网软件，而是随着使用深度不断放大的计算网络。一次普通问答有推理成本，长上下文会拉高成本，多轮 Agent 调用会继续叠加成本，图像和视频生成又是更重的一层。再往后，还有带宽、存储、训练和持续迭代。</p>
+  <ul><li>推理成本：每一次回答都要算力</li><li>长上下文成本：读得越长，账单越厚</li><li>多轮 Agent 成本：搜索、比较、调用工具、确认支付会多次消耗模型</li><li>多模态成本：图像、视频、语音比普通文本更重</li><li>基础设施成本：带宽、存储、训练和模型迭代持续发生</li></ul>
+  <p>这意味着：<strong>用户用得越多，不一定利润越高，反而可能成本增长越快。</strong>尤其是 Agent 场景，用户前台只说一句“帮我买”，后台却可能经历搜索、比价、读评价、调工具、确认支付和生成解释等多轮调用。用户感觉路径变短，平台背后的调用链反而变长。</p>
+  <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、企业服务和交易入口试水带来的潜在增量，在保守基准下大约 230 亿（推测的）。同期的成本压力，如果把算力折旧/租赁、训练、推理、研发运营和基础设施摊销一起看，中心情景大约 1350 亿（推测的）。</p>
+  <p>在这个中心情景下，缺口和覆盖率就不是再推测，而是公式。无论用中心情景，还是放宽到 1100-1600 亿的成本区间，结论都一样：模型收入短期很难覆盖模型成本压力。</p>
+  <p>下面这张图里，我把“2026 保守基准”和“成熟期情景”放在一起。成熟期的 950 亿不是公司预测，下一节会拆成四条收入腿；这里先看它想说明的结构矛盾：覆盖率可能变好，但绝对缺口仍然可能扩大。</p>
+<section class="metrics">
+    <section class="metric red"><span>2026 保守基准（推测的）</span><strong>230 亿收入 / 1350 亿成本压力</strong><em>1350 是中心情景；缺口=1350-230=1120，覆盖率≈17%。</em></section>
+    <section class="metric red"><span>成熟期测算（推测的）</span><strong>950 亿收入 / 2400 亿成本压力</strong><em>四条腿合计 950；缺口=2400-950=1450，覆盖率≈40%。</em></section>
+  </section>
+  <p>更反直觉的是，哪怕新收入长出来，缺口也未必立刻缩小。原因是收入增长和成本增长不是同一条曲线：收入是慢变量，要靠产品、付费、商业推荐和交易分成慢慢成熟；成本是快变量，只要调用量、上下文长度、多模态和 Agent 任务上来，就会立刻放大。</p>
+  <section class="callout red"><p><strong>这就是本文最重要的财务判断：</strong><br>大模型平台不是 API 赚不到钱，而是 API 的收入密度很难独自覆盖入口级产品的成本压力。所以它必须向广告、交易和集团账本寻找第二、第三条腿。</p></section>
+  <section class="calc-note">
+    <strong>本模块口径</strong>
+    <p>2026 成本压力：1350 亿不是豆包 App 独立财报成本，而是偏“集团 AI 投入口径”的中心情景。外部锚点是公开报道中的字节 2026 年 AI capex 2000 亿元以上；再按豆包、火山方舟、模型训练、推理服务、多模态和 Agent 基础设施占用 55%-60% 估算约 1100-1200 亿，并补入训练实验、模型迭代、数据处理、安全审核、带宽存储、工程研发和运营等 150-250 亿。</p><p>2026 公式：缺口 = 1350 - 230 = 1120 亿；覆盖率 = 230 ÷ 1350 ≈ 17%。如果成本压力取 1100 亿，覆盖率约 21%；如果取 1600 亿，覆盖率约 14%。</p><p>API 覆盖成本所需价格：1350 亿 ÷ 365 ÷ 1.2 亿 ≈ 3.1 元/百万 token；2400 亿 ÷ 365 ÷ 1.2 亿 ≈ 5.5 元/百万 token。这里的 3.1 和 5.5 都是“全量摊薄价”，不是少数外部 API 客户的标价。</p><p>为什么必须做 API 之外的收入：如果只靠模型调用覆盖 1350 亿成本压力，全量摊薄价要约 3.1 元/百万 token；而本文 2026 保守口径是 0.3 元/百万 token。差距不是单纯提价能解决，因为 120 万亿 token 中包含大量免费 C 端、内部调用、折扣客户和低价模型。</p>
+  </section>
+
+  <h2>03 四条收入腿：为什么必须走向商业推荐和交易分成</h2>
+  <p>有了缺口之后，商业化问题就不再是“会员能不能卖、API 能不能卖”这么简单。平台当然会继续卖 API，也会继续做订阅和企业服务，但它还必须找更高收入密度的位置。</p>
+  <p>这个位置不在 token 本身，而在用户的决策链路里：用户在哪里做决定，商家预算、推荐机会和交易分成就会往哪里迁移。</p>
+  <p>所以成熟期收入可以拆成四条腿，而不是只盯着 API 一条腿：</p>
+  <ul><li><strong>订阅约 150 亿。</strong>这是最像传统软件的收入，确定性较高，但国内 C 端付费率很难把它单独做成千亿级。</li><li><strong>API/企业调用约 420 亿。</strong>这是短中期最重要的现金流，但它仍然受价格战、折扣和免费流量摊薄影响。</li><li><strong>AI 商业推荐约 220 亿。</strong>这是远期情景，不是当前豆包或千问已经售卖广告位；它对应的是未来若平台开放清晰标注的商业推荐，一部分搜索、信息流和电商广告预算可能迁移过来。</li><li><strong>Agent 交易分成约 160 亿。</strong>这也是远期情景，不是说当前 AI 下单已经单独抽佣；它对应的是 Agent 影响并可归因的成交，未来可能通过既有电商服务费、商家分成或履约服务费体现。</li></ul>
+<p>这时再回头看商品卡、“帮你选”和购物下单，就不会只是一个产品功能。按本文成熟期情景，若只算交易完成后的 Agent 交易分成，约 160 亿，占 950 亿收入的 17% 左右；若把商品推荐、AI 商业推荐也算作交易入口相关收入，合计约 380 亿，占比接近 40%（均为远期推测）。</p>
+  <section class="calc-note">
+    <strong>四条腿口径</strong>
+    <p>成熟期收入不是公司预测，而是四条腿情景拆分。订阅约 150 亿：以豆包 3 亿级 MAU 为用户池，假设成熟期付费率约 4%-5%、月均客单价约 60-70 元，则年收入约 100-150 亿，取上沿 150 亿。</p><p>API/企业调用约 420 亿：2026 保守口径是全量摊薄价 0.3 元/百万 token，对应约 131 亿；成熟期假设可收费 token 占比、企业调用占比和平均结算价上升，把全量摊薄价提高到约 1 元/百万 token，则 1.2 亿个“百万 token 单位/天” × 1 元 × 365 ≈ 438 亿，扣除折扣和低价模型影响后取约 420 亿。</p><p>AI 商业推荐约 220 亿：这是远期情景，不是当前豆包或千问已经售卖广告位。这里的 4%-6% 不是说全行业 AI 入口只会迁移这么少，而是“单个平台最终能计入收入的有效捕获率”。推算链条是：可迁移预算池 × AI 入口迁移率 × 本平台份额 × 广告加载/归因/合规折扣。若可迁移预算池按 3000-5000 亿看，全行业迁移率可以更高，比如 10%-20%；但再乘以单个平台份额和可商业化折扣后，落到某个平台的有效捕获率可能只有约 4%-6%，对应约 120-300 亿，中心情景取约 220 亿。</p><p>Agent 交易分成约 160 亿：这是远期情景，不是当前 AI 下单已经单独抽佣。按“被 Agent 影响并可归因成交”的 GMV 来算，而不是按全网 GMV 直接抽成；若成熟期可归因成交额约 2000-4000 亿，平台净服务费/交易分成率约 4%-8%，对应约 80-320 亿，中心情景取约 160 亿。</p><p>四条腿合计 150 + 420 + 220 + 160 = 950 亿；成本压力按 2400 亿情景，则缺口 = 2400 - 950 = 1450 亿，覆盖率约 40%。只算交易分成，160 ÷ 950 ≈ 17%；若把 AI 商业推荐也算作“商品推荐/交易入口相关收入”，220 + 160 = 380 亿，占成熟期收入约 40%。</p>
+  </section>
+
+  <h2>04 用户习惯变了，商业推荐和交易分成才有位置</h2>
+  <p>但这里还有一个关键问题：平台想做商业推荐和交易分成，不等于用户会接受。</p>
+  <p>真正让这条路成立的，不是平台单方面想多赚钱，而是用户习惯正在变。用户先从“自己搜索十个链接”，变成“直接问 AI 要一个答案”；再从“自己拿答案去操作”，变成“让 Agent 直接完成任务”。</p>
+  <p>用户每少做一步，商业入口就往下游挪一步。用户不再点链接，品牌就会关心自己有没有出现在 AI 答案里；用户不再自己下单，商家就会关心自己能不能被 Agent 选中。平台能收费的位置，也就从“模型调用”移动到“决策露出”，最后移动到“交易结果”。</p>
+  <h3>商业推荐：从被搜索，到被提及</h3>
+  <p>过去互联网是这样的：用户搜索，点击链接，比较信息，再做决策。广告挂在搜索结果、信息流、电商列表里。</p>
+  <p>但 AI 出现后，用户越来越少看十个链接，而是直接看一个答案。</p>
+  <p>这带来一个结构性变化：<strong>入口从“链接列表”变成“单一答案”。</strong></p>
+  <p>所以这里更准确的说法不是“豆包或千问已经开始卖 AI 广告”，而是：如果未来 AI 答案成为用户决策入口，商家预算会有动力迁移到“被推荐、被提及、被选择”的位置。至于是否以广告位、商业推荐、佣金或服务费呈现，要看平台的标注方式、监管要求和用户接受度。</p>
+<h3>Agent：从找信息，到完成结果</h3>
+  <p>关键变化是，过去用户自己做所有决策：比价、选商品、看评价、填信息、下单。未来则变成：用户只说目标，Agent 负责执行。</p>
+  <p>比如，“帮我点个附近评分最高的外卖”；“帮我订一张性价比最高的机票”；“帮我选一个适合送礼的商品”。</p>
+  <p>只要 Agent 做到三件事：更省时间、不更贵、结果可靠，用户就会接受它替代自己决策。</p>
+  <p>而一旦这件事发生，商业模式就可能从“信息收费”，进一步走向交易分成、履约服务费或既有电商平台服务费。</p>
+  <section class="callout green"><p><strong>一句话总结：</strong><br>商家预算不会消失，只是跟着用户决策入口迁移；用户不是为了让平台分成才用 Agent，而是为了更省时间、更可靠、更少操作。</p></section>
+  <section class="calc-note">
+    <strong>本模块口径</strong>
+    <p>三阶段不是严格时间表，而是收入重心迁移：先卖调用能力，再卖决策入口里的曝光，最后在交易完成后收费。推动它变化的不是平台单方面想收费，而是用户体验变化。</p><p>图里的 220 亿 AI 商业推荐、160 亿 Agent 交易分成，是成熟期收入拆分里的远期情景数，不是公司披露收入，也不是当前豆包/千问已经售卖广告或单独抽佣的证据。</p><p>用户不会因为“平台要分成”而选择 Agent。用户选择 Agent 的理由是更省时间、结果可靠、价格不吃亏；若未来出现平台分成，通常也更可能体现在商家获客、履约服务费、既有电商服务费或交易分成里。</p>
+  </section>
+
+  <h2>05 三个玩家，三种完全不同的路径</h2>
+  <h3>① 千问（阿里）</h3>
+  <p>千问背后是淘宝、支付宝、本地生活和履约体系。它的优势是有完整交易闭环。</p>
+  <p>所以 Agent 对它来说，不是破坏体系，而是增强体系。它可以更激进地做“直接下单”。</p>
+  <h3>② 豆包（字节）</h3>
+  <p>豆包背后是内容流、广告系统、种草链路和电商转化。更准确地说，豆包不是没有做交易入口：它已经开始用商品卡、“帮你选”和购物下单，把 AI 对话接到抖音电商。</p>
+  <p>但这恰恰说明问题已经进入下一层：当用户在豆包里直接看商品、比价、下单，原来“内容种草 → 广告投流 → 抖音商城转化”的链路就会被压缩。</p>
+  <p>所以豆包的难点不是“能不能做”，而是“怎么做得足够快，又不让旧的内容电商和广告投放链路被自己过早压缩”。</p>
+  <h3>③ DeepSeek</h3>
+  <p>DeepSeek 没有同等级的交易系统，也没有同等级的广告体系。它更可能走低价、中立、基础模型路线。</p>
+  <p>它的优势反而是：不被商业化路径绑架。</p>
+<section class="calc-note">
+    <strong>玩家判断口径</strong>
+    <p>千问接入淘宝、闪购、支付宝属于公开事实；“更适合激进做交易型 Agent”是基于阿里交易闭环的战略判断。</p><p>豆包支持商品卡、购物下单和“帮你选”来自媒体实测与报道；但没有公开证据显示豆包已经在 AI 对话里售卖广告位，或对 AI 下单单独抽佣。“需要权衡旧广告/内容电商链路”是从字节现有内容电商、信息流广告和种草投流链路可能被 Agent 缩短来推断，不是字节官方表态。</p><p>DeepSeek 的“低价、中立、基础模型”判断，来自它缺少同等级广告和交易闭环这一结构条件。</p>
+  </section>
+
+  <h2>06 真正的本质：不是模型竞争，是入口竞争</h2>
+  <p>如果把所有东西压缩成一句话：<strong>大模型不是在卖能力，而是在争夺下一代入口。</strong></p>
+  <p>入口一旦变了，搜索广告会变，内容分发会变，电商转化链路会变，甚至“决策权”本身都会被重新定价。</p>
+<h2>07 最后一个更底层的结论</h2>
+  <p>回到最开始的问题：为什么看起来豆包在亏钱，但字节还在继续做？</p>
+  <p>因为你看到的是“产品账”，但它算的是“集团账”。</p>
+  <p>豆包本身可能是高成本、低直接收入、强补贴。但在集团层面，它的价值是下一代入口、广告理解能力升级、电商转化效率提升，以及长期 AI 操作系统入口。</p>
+  <p>所以“亏的是豆包，赚的是字节”，更准确地说，不是豆包亏损不重要，而是豆包不能只按一个独立 App 的短期损益来理解。它更像字节押注下一代入口的一张期权。</p>
+  <section class="calc-note">
+    <strong>本模块口径</strong>
+    <p>“搜索框 → 信息流 → AI 对话 → Agent 执行”不是说旧入口会立刻消失，而是说新增入口会逐步拿走一部分决策时间。商业化跟着入口走：用户在哪里做决定，推荐机会、商家预算和交易分成就会往哪里迁移。</p><p>这里不是说豆包亏损不重要，而是说豆包不能只按独立 App 的短期损益判断。它带来的收益可能不记在豆包账上，而是体现在广告提效、电商转化、火山引擎企业服务，以及防御下一代入口被别人拿走。</p>
+  </section>
+
+  <h2>结语</h2>
+  <p>大模型商业化的本质不是“模型怎么收费”，而是一个更大的问题：<strong>谁能定义下一代互联网入口。</strong></p>
+  <p>当入口从搜索框变成 AI 对话框，再变成 Agent 执行链路之后，商家预算会迁移，交易会迁移，决策也会迁移。</p>
+  <p>最终留下来的问题只有一个：谁能在不破坏旧体系的情况下，接住新入口。</p>
+
+  <h2>数据口径说明</h2>
+  <section class="note">
+    <p><strong>1. 有公开论据的事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎披露豆包大模型 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.news.cn/tech/20250611/db9b3c0ef97d49058413563b1c434951/c.html">新华网关于豆包 1.6 输入 0.8 元/百万 token、输出 8 元/百万 token 的报道</a>用于核对 API 标价；<a href="https://www.volcengine.com/docs/82379/1544106?lang=zh">火山方舟模型价格页</a>用于核对官方价格口径；<a href="https://www.scmp.com/tech/article/3352906/bytedance-raises-2026-capex-least-25-amid-ai-boom-rising-memory-costs-sources-say">SCMP 关于字节 2026 AI capex 超 2000 亿元的报道</a>用于核对成本量级背景；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://finance.sina.com.cn/tech/shenji/2026-03-10/doc-inhqnmhw0183684.shtml">新浪科技关于豆包支持应用内购物下单的实测报道</a>与 <a href="https://www.iheima.com/article-396615.html">i黑马关于“豆包帮你选”上线的报道</a>用于核对豆包购物入口；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付能力；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
+    <p><strong>2. 公式推算 / 推测数据：</strong>0.3 元/百万 token 是一个简化测算口径，不是 API 标价；约 131 亿模型调用收入、230 亿总收入、1350 亿成本压力、950 亿成熟收入、2400 亿成熟期成本压力、1120 亿 / 1450 亿缺口，均属于量级测算或情景推演，不是公司财报。核心公式是：模型调用收入 = token 调用量 ÷ 100 万 × 全量摊薄价 × 天数；全量摊薄价 = 可收费 token 占比 × 可收费 token 平均结算价。本文保守情景取 40% × 0.75 元 ≈ 0.3 元/百万 token；API 覆盖成本所需摊薄价 = 成本压力 ÷ 365 ÷ 日 token 单位；成本压力 = AI 基础设施资源分摊 + 训练/推理 + 研发运营/带宽存储；覆盖率 = 收入 ÷ 成本压力；缺口 = 成本压力 - 收入。950 亿成熟收入的拆分公式是：订阅收入 = MAU × 付费率 × 月均客单价 × 12；API/企业调用收入 = 日 token 单位 × 成熟期全量摊薄价 × 365；AI 商业推荐 = 可迁移商家预算 × 单个平台有效捕获率，其中有效捕获率已经包含 AI 入口迁移率、本平台份额、广告加载、归因和合规折扣；Agent 交易分成 = 可归因成交 GMV × 平台净服务费/交易分成率。特别注意：120 万亿 token 是豆包大模型公开使用量锚点，不等于“全部都是可收费外部 API 调用”；1350 亿是中心情景，不是公司披露成本。</p>
+    <p><strong>3. 图示口径：</strong>图 1 的收入、成本压力、缺口为推测的；图 2 的三阶段商业化路径为推测的；图 3 的商业化迁移方向是战略判断，其中 220 亿 / 160 亿为远期推测，不代表当前豆包或千问已经售卖 AI 广告位，也不代表 AI 下单已经单独抽佣；图 4 中千问接入淘宝 / 闪购 / 支付宝、豆包试水商品卡 / 购物入口属于公开事实，其余玩家路径判断为推测的；图 5 的入口迁移属于趋势判断，为推测的。</p>
+    <p><strong>4. 阅读方式：</strong>文中“推测的”不是公司披露结果，而是为了说明商业逻辑和量级关系；有公开论据的数据用于做事实锚点，推测数据用于呈现变量关系。</p>
+  </section>
+  
+</main>
+<script>
+  const btn = document.getElementById("copyBtn");
+  const statusEl = document.getElementById("copyStatus");
+  function plainTextFrom(el) {
+    return el.innerText.replace(/\n{3,}/g, "\n\n").trim();
+  }
+  function applyInlineStyles(root) {
+    const baseFont = "-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',Arial,sans-serif";
+    root.style.cssText = "max-width:760px;margin:0 auto;background:#fffdf8;color:#1a1a1a;font-family:" + baseFont + ";line-height:1.9;";
+    root.querySelectorAll("*").forEach(function (el) {
+      const tag = el.tagName.toLowerCase();
+      el.style.fontFamily = baseFont;
+      el.style.boxSizing = "border-box";
+      if (tag === "h1") {
+        el.style.cssText += "margin:0 0 26px;padding:8px 0 20px;border-bottom:1px solid #e6e0d4;text-align:center;font-size:30px;line-height:1.32;font-weight:850;color:#151515;";
+      } else if (tag === "h2") {
+        if (!el.dataset.headingStyled) {
+          const text = el.textContent.trim();
+          const m = text.match(/^(\d{2})\s+(.+)$/);
+          if (m) {
+            el.innerHTML = '<span style="display:inline-block;margin-right:9px;padding:2px 8px;border-radius:999px;background:#0f6e56;color:#fff;font-size:14px;line-height:1.5;font-weight:800;vertical-align:2px;">' + m[1] + '</span><span style="font-weight:800;color:#151515;">' + m[2] + '</span>';
+          }
+          el.dataset.headingStyled = "1";
+        }
+        el.style.cssText += "margin:46px 0 20px;padding:12px 14px;border-left:6px solid #0f6e56;border-radius:0 10px 10px 0;background:#f2faf6;font-size:22px;line-height:1.45;font-weight:800;color:#151515;";
+      } else if (tag === "h3") {
+        el.style.cssText += "margin:30px 0 12px;padding:4px 0 4px 10px;border-left:3px solid #5dcaa5;font-size:18px;line-height:1.55;font-weight:800;color:#0f6e56;";
+      } else if (tag === "p") {
+        el.style.cssText += "margin:18px 0;font-size:17px;line-height:1.95;color:#282828;";
+      } else if (tag === "strong") {
+        el.style.cssText += "font-weight:800;color:#111;";
+      } else if (tag === "ul") {
+        el.style.cssText += "margin:16px 0 20px;padding-left:22px;list-style-type:disc;";
+      } else if (tag === "li") {
+        el.style.cssText += "margin:10px 0;padding-left:2px;font-size:16.5px;line-height:1.9;color:#2a2a2a;list-style-type:disc;";
+      } else if (tag === "a") {
+        el.style.cssText += "color:#0f6e56;text-decoration:none;border-bottom:1px solid #b7d8cc;";
+      }
+      if (el.classList.contains("kicker")) {
+        el.style.cssText += "margin:0 0 14px;color:#0f6e56;font-size:13px;font-weight:800;letter-spacing:1px;";
+      }
+      if (el.classList.contains("callout")) {
+        el.style.cssText += "margin:24px 0;padding:18px 18px;border-radius:14px;border:1px solid #d9ebe4;background:#f6faf7;";
+      }
+      if (el.classList.contains("amber")) {
+        el.style.cssText += "background:#fff7ea;border-color:#f0d9a8;";
+      }
+      if (el.classList.contains("red")) {
+        el.style.cssText += "background:#fff1ef;border-color:#efc7be;";
+      }
+      if (el.classList.contains("calc-note")) {
+        el.style.cssText += "margin:10px 0 22px;padding:12px 14px 11px;border-radius:10px;background:#f8f6f0;border:1px solid #e8dfce;border-left:3px solid #d6a148;";
+      }
+      if (el.classList.contains("note")) {
+        el.style.cssText += "margin:26px 0;padding:16px 17px;border-radius:12px;background:#f5f3ee;color:#5f5a50;font-size:14px;line-height:1.85;";
+      }
+      if (el.closest(".calc-note") && tag === "strong") {
+        el.style.cssText += "display:block;margin-bottom:5px;font-size:13.5px;line-height:1.6;color:#7a4f0b;";
+      }
+      if (el.closest(".calc-note") && tag === "p") {
+        el.style.cssText += "margin:5px 0;font-size:13.2px;line-height:1.78;color:#5f5a50;";
+      }
+      if (el.closest(".note") && tag === "p") {
+        el.style.cssText += "margin:8px 0;font-size:14px;line-height:1.85;color:#5f5a50;";
+      }
+    });
+    return root;
+  }
+  function clipboardHtmlFrom(source) {
+    const clone = source.cloneNode(true);
+    applyInlineStyles(clone);
+    return clone.innerHTML;
+  }
+  async function copyArticle() {
+    const source = document.getElementById("copySource");
+    const html = clipboardHtmlFrom(source);
+    const text = plainTextFrom(source);
+    try {
+      if (navigator.clipboard && window.ClipboardItem) {
+        await navigator.clipboard.write([
+          new ClipboardItem({
+            "text/html": new Blob([html], { type: "text/html" }),
+            "text/plain": new Blob([text], { type: "text/plain" })
+          })
+        ]);
+      } else {
+        const range = document.createRange();
+        range.selectNodeContents(source);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        document.execCommand("copy");
+        sel.removeAllRanges();
+      }
+      statusEl.textContent = "已复制。现在可以粘贴到微信公众号编辑器。";
+    } catch (err) {
+      const range = document.createRange();
+      range.selectNodeContents(source);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      statusEl.textContent = "浏览器限制自动复制，已选中正文。请按 Cmd+C / Ctrl+C。";
+    }
+  }
+  applyInlineStyles(document.getElementById("copySource"));
+  btn.addEventListener("click", copyArticle);
+</script>
+</body>
+</html>
