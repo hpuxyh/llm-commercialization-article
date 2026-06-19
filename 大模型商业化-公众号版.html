@@ -25,6 +25,7 @@
   ul{margin:16px 0 20px;padding:0;list-style:none;}
   li{position:relative;margin:12px 0;padding-left:22px;font-size:16.5px;line-height:1.9;color:#2a2a2a;}
   li::before{content:"";position:absolute;left:5px;top:13px;width:7px;height:7px;border-radius:50%;background:var(--teal);}
+  p a,li a{color:var(--teal);text-decoration:none;border-bottom:1px solid #b7d8cc;}
   .callout{margin:24px 0;padding:18px 18px;border-radius:14px;border:1px solid #d9ebe4;background:#f6faf7;}
   .callout.green{background:#f6faf7;border-color:#d9ebe4;}
   .callout.amber{background:#fff7ea;border-color:#f0d9a8;}
@@ -88,9 +89,9 @@
   <h2>01 先别谈商业化，先算一笔最朴素的账</h2>
   <p>要理解大模型平台到底能不能靠“卖模型能力”活下来，需要先看一个最基础的问题：模型到底赚多少钱？成本又是多少？</p>
   <p>我们用一个非常朴素的方式拆一下。这里不是财报，而是量级推算。</p>
-  <ul><li>日均 token 调用量：约 120 万亿 token/天</li><li>换算后：约 1.2 亿个“百万 token 单位/天”</li><li>每百万 token 平均收入假设：约 0.3 元</li></ul>
-  <p>那么，每天收入约等于 1.2 亿 × 0.3 元，也就是约 3600 万元。再乘以 365 天，每年大约是 131 亿元级别。</p>
-  <p>考虑免费用户、折扣定价、不同模型混合调用，以及企业/API 的价格差异，比较合理的结论是：<strong>接口收入大致在百亿级，而不是千亿级。</strong></p>
+  <ul><li>日均 token 调用量：约 120 万亿 token/天（来源：<a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报引述火山引擎披露</a>）</li><li>换算后：约 1.2 亿个“百万 token 单位/天”（由 120 万亿 ÷ 100 万换算）</li><li>每百万 token 平均收入假设：约 0.3 元（测算假设，推测的）</li></ul>
+  <p>那么，每天收入约等于 1.2 亿 × 0.3 元，也就是约 3600 万元。再乘以 365 天，每年大约是 131 亿元级别（推测的）。</p>
+  <p>考虑免费用户、折扣定价、不同模型混合调用，以及企业/API 的价格差异，比较合理的结论是：<strong>接口收入大致在百亿级，而不是千亿级（推测的）。</strong></p>
   <section class="callout amber"><p><strong>真正的问题不是“百亿收入少不少”。</strong><br>真正的问题是，调用量已经是超级互联网级别，但收入仍然只是百亿级。</p></section>
 
   <h2>02 更关键的问题：成本是另一条完全不同的曲线</h2>
@@ -98,17 +99,17 @@
   <p>因为大模型真正的成本结构，是随着使用深度不断放大的。一次普通问答有推理成本，长上下文会拉高成本，多轮 Agent 调用会继续叠加成本，图像和视频生成又是更重的一层。再往后，还有带宽、存储、训练和持续迭代。</p>
   <ul><li>推理成本：每一次回答都要算力</li><li>长上下文成本：读得越长，账单越厚</li><li>多轮 Agent 成本：搜索、比较、调用工具、确认支付会多次消耗模型</li><li>多模态成本：图像、视频、语音比普通文本更重</li><li>基础设施成本：带宽、存储、训练和模型迭代持续发生</li></ul>
   <p>这意味着：<strong>用户用得越多，不一定利润越高，反而可能成本增长越快。</strong></p>
-  <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、广告试水和早期 Agent，大约 230 亿；同期成本大约 1350 亿。结果就是：缺口约 1120 亿，覆盖率约 17%。</p>
+  <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、广告试水和早期 Agent，大约 230 亿（推测的）；同期成本大约 1350 亿（推测的）。结果就是：缺口约 1120 亿（推测的），覆盖率约 17%（推算结果）。</p>
 
   <h2>03 一个反直觉的结论出现了</h2>
   <p>如果只看这组数字，会得出一个直觉判断：模型业务根本不赚钱。</p>
   <p>但更关键的地方在下一层：收入在变好，缺口反而可能变大。</p>
   <p>原因是，收入增长和成本增长不是同一条曲线。收入是慢变量，要靠产品、付费、广告和抽佣慢慢成熟；成本是快变量，只要调用量、上下文长度、多模态和 Agent 任务上来，就会立刻放大。</p>
-  <p>所以即使未来进入成熟阶段，收入可能到 950 亿，成本也可能到 2400 亿。覆盖率从约 17% 提升到约 40%，看起来更好了；但缺口反而从 1120 亿扩大到 1450 亿。</p>
+  <p>所以即使未来进入成熟阶段，收入可能到 950 亿（推测的），成本也可能到 2400 亿（推测的）。覆盖率从约 17% 提升到约 40%（推算结果），看起来更好了；但缺口反而从 1120 亿扩大到 1450 亿（推测的）。</p>
   <figure class="fig">
 <svg class="f" viewBox="0 0 700 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="收入成本缺口测算：2026 与 2027-2028">
   <text class="fh" x="350" y="32" text-anchor="middle" fill="#1a1a1a">模型账本的核心矛盾：覆盖率变好，绝对缺口仍可能扩大</text>
-  <text class="fxs" x="350" y="56" text-anchor="middle" fill="#6b6b6b">单位：亿元；公开信息推算，非公司披露数据</text>
+  <text class="fxs" x="350" y="56" text-anchor="middle" fill="#6b6b6b">单位：亿元；收入/成本/缺口均为公开信息推算（推测的），非公司披露数据</text>
 
   <line x1="78" y1="370" x2="660" y2="370" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="374" text-anchor="end" fill="#999">0</text>
   <line x1="78" y1="306" x2="660" y2="306" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="310" text-anchor="end" fill="#999">500</text>
@@ -138,10 +139,10 @@
 
   <rect x="152" y="438" width="13" height="13" rx="3" fill="#1D9E75"/><text class="fxs" x="172" y="448" fill="#555">收入</text>
   <rect x="242" y="438" width="13" height="13" rx="3" fill="#E27D5A"/><text class="fxs" x="262" y="448" fill="#555">缺口 / 仍需集团账本支撑</text>
-</svg><figcaption>图 1　收入 vs 成本缺口图：覆盖率上升，但绝对缺口可能扩大</figcaption></figure>
+</svg><figcaption>图 1　收入 vs 成本缺口图：覆盖率上升，但绝对缺口可能扩大（收入、成本、缺口均为推测的）</figcaption></figure>
   <section class="metrics">
-    <section class="metric red"><span>2026 测算</span><strong>230 亿收入 / 1350 亿成本</strong><em>缺口=1350-230=1120，覆盖率=230÷1350≈17%。</em></section>
-    <section class="metric red"><span>成熟期测算</span><strong>950 亿收入 / 2400 亿成本</strong><em>缺口=2400-950=1450，覆盖率≈40%。</em></section>
+    <section class="metric red"><span>2026 测算（推测的）</span><strong>230 亿收入 / 1350 亿成本</strong><em>缺口=1350-230=1120（推测的），覆盖率=230÷1350≈17%（推算结果）。</em></section>
+    <section class="metric red"><span>成熟期测算（推测的）</span><strong>950 亿收入 / 2400 亿成本</strong><em>缺口=2400-950=1450（推测的），覆盖率≈40%（推算结果）。</em></section>
   </section>
   <section class="callout red"><p><strong>这就是最反直觉的地方：</strong><br>规模越大，不代表越接近盈利，反而可能更依赖新的商业模式。</p></section>
 
@@ -172,7 +173,7 @@
   <line x1="450" y1="158" x2="492" y2="158" stroke="#d85a30" stroke-width="2.2" marker-end="url(#stageArrow)"/>
   <rect x="90" y="252" width="540" height="36" rx="12" fill="#fff7ea" stroke="#f0d9a8"/>
   <text class="fs" x="360" y="275" text-anchor="middle" fill="#7a4f0b">主线：从“帮你找信息”，升级为“帮你完成结果”</text>
-</svg><figcaption>图 2　三阶段商业化路径：API/订阅 → 广告 → Agent 抽佣</figcaption></figure>
+</svg><figcaption>图 2　三阶段商业化路径：API/订阅 → 广告 → Agent 抽佣（路径判断为推测的）</figcaption></figure>
 
   <h2>05 为什么广告是必然的，而不是“想不想做”</h2>
   <p>很多人会误解一个问题：大模型为什么一定要做广告？</p>
@@ -217,10 +218,10 @@
   <text class="fs" x="190" y="284" text-anchor="middle" fill="#9a6a14">老盘子 · 关键词预算</text>
   <rect x="300" y="232" width="160" height="70" rx="12" fill="#e1f5ee" stroke="#5dcaa5"/>
   <text class="ft" x="380" y="260" text-anchor="middle" fill="#0f6e56">AI 答案广告</text>
-  <text class="fs" x="380" y="284" text-anchor="middle" fill="#0a4a3a">成熟期测算约 220 亿</text>
+  <text class="fxs" x="380" y="284" text-anchor="middle" fill="#0a4a3a">约 220 亿（推测的）</text>
   <rect x="490" y="232" width="160" height="70" rx="12" fill="#e1f5ee" stroke="#5dcaa5"/>
   <text class="ft" x="570" y="260" text-anchor="middle" fill="#0f6e56">智能体抽佣</text>
-  <text class="fs" x="570" y="284" text-anchor="middle" fill="#0a4a3a">成熟期测算约 160 亿</text>
+  <text class="fxs" x="570" y="284" text-anchor="middle" fill="#0a4a3a">约 160 亿（推测的）</text>
   <line x1="272" y1="267" x2="298" y2="267" stroke="#d85a30" stroke-width="2.2" marker-end="url(#ar1)"/>
   <line x1="462" y1="267" x2="488" y2="267" stroke="#d85a30" stroke-width="2.2" marker-end="url(#ar1)"/>
 
@@ -230,8 +231,8 @@
   <line x1="190" y1="212" x2="190" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
   <line x1="380" y1="212" x2="380" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
   <line x1="570" y1="212" x2="570" y2="230" stroke="#d8d6cf" stroke-width="1.6"/>
-  <text class="fxs" x="360" y="320" text-anchor="middle" fill="#6b6b6b">注意：220 亿 / 160 亿是量级推算，不是公司披露收入</text>
-</svg><figcaption>图 3　广告迁移路径：搜索广告 → AI 答案 → Agent 推荐</figcaption></figure>
+  <text class="fxs" x="360" y="320" text-anchor="middle" fill="#6b6b6b">注意：220 亿 / 160 亿是量级推算（推测的），不是公司披露收入</text>
+</svg><figcaption>图 3　广告迁移路径：搜索广告 → AI 答案 → Agent 推荐（迁移方向为判断，220 亿 / 160 亿为推测的）</figcaption></figure>
   <section class="callout green"><p><strong>一句话总结：</strong><br>钱不会消失，只是换了入口。</p></section>
 
   <h2>06 为什么 Agent 抽佣是第二条必然路径</h2>
@@ -291,7 +292,7 @@
   <text class="fs" x="554" y="284" fill="#444">底层模型心智</text>
   <line x1="40" y1="302" x2="680" y2="302" stroke="#eee"/>
   <text class="fxs" x="40" y="324" fill="#6b6b6b">决策因素：① 现有盘是否被蚕食（最关键）　② 生态/履约　③ 成本　④ 用户购物心智　⑤ 合规</text>
-</svg><figcaption>图 4　三大玩家路径对比：千问是交易闭环，豆包是内容入口，DeepSeek 是基础模型</figcaption></figure>
+</svg><figcaption>图 4　三大玩家路径对比：千问是交易闭环，豆包是内容入口，DeepSeek 是基础模型（除千问接入事实外，路径判断为推测的）</figcaption></figure>
 
   <h2>08 真正的本质：不是模型竞争，是入口竞争</h2>
   <p>如果把所有东西压缩成一句话：<strong>大模型不是在卖能力，而是在争夺下一代入口。</strong></p>
@@ -324,7 +325,7 @@
   <line x1="516" y1="154" x2="540" y2="154" stroke="#d85a30" stroke-width="2.2" marker-end="url(#entryArrow)"/>
   <rect x="70" y="252" width="580" height="38" rx="12" fill="#fff7ea" stroke="#f0d9a8"/>
   <text class="fs" x="360" y="276" text-anchor="middle" fill="#7a4f0b">真正变化：广告、交易和决策权，都会跟着入口一起迁移</text>
-</svg><figcaption>图 5　入口迁移图：搜索框 → 信息流 → AI 对话 → Agent 执行</figcaption></figure>
+</svg><figcaption>图 5　入口迁移图：搜索框 → 信息流 → AI 对话 → Agent 执行（趋势判断为推测的）</figcaption></figure>
 
   <h2>09 最后一个更底层的结论</h2>
   <p>回到最开始的问题：为什么看起来豆包在亏钱，但字节还在继续做？</p>
@@ -339,9 +340,10 @@
 
   <h2>数据口径说明</h2>
   <section class="note">
-    <p><strong>1. 事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>、<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>、<a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 支付和交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
-    <p><strong>2. 推算数据：</strong>128 亿 API 收入、230 亿总收入、1350 亿成本、950 亿成熟收入、2400 亿成熟成本、1120 亿 / 1450 亿缺口，均属于量级测算，不是公司财报。核心公式是：接口收入 = token 调用量 ÷ 100 万 × 平均单价 × 天数；覆盖率 = 收入 ÷ 成本；缺口 = 成本 - 收入。</p>
-    <p><strong>3. 战略判断：</strong>广告会迁移到 AI 答案，Agent 会成为长期胜负手，千问更激进、豆包更克制、DeepSeek 更中立，均属于基于公开事实和商业逻辑的判断，不是公司披露结论。</p>
+    <p><strong>1. 有公开论据的事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付能力；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
+    <p><strong>2. 公式推算 / 推测数据：</strong>0.3 元/百万 token 的平均收入假设、128 亿 API 收入、230 亿总收入、1350 亿成本、950 亿成熟收入、2400 亿成熟成本、1120 亿 / 1450 亿缺口、220 亿 AI 答案广告、160 亿 Agent 抽佣，均属于量级测算或情景推演，不是公司财报。核心公式是：接口收入 = token 调用量 ÷ 100 万 × 平均单价 × 天数；覆盖率 = 收入 ÷ 成本；缺口 = 成本 - 收入。</p>
+    <p><strong>3. 图示口径：</strong>图 1 的收入、成本、缺口为推测的；图 2 的三阶段商业化路径为推测的；图 3 的广告迁移方向是战略判断，其中 220 亿 / 160 亿为推测的；图 4 中千问接入淘宝 / 闪购 / 支付宝属于公开事实，其余玩家路径判断为推测的；图 5 的入口迁移属于趋势判断，为推测的。</p>
+    <p><strong>4. 阅读方式：</strong>文中“推测的”不是公司披露结果，而是为了说明商业逻辑和量级关系；有公开论据的数据用于做事实锚点，推测数据用于呈现变量关系。</p>
   </section>
   
 </main>
