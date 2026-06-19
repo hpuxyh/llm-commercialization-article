@@ -104,18 +104,20 @@
   <p>因为大模型真正的成本结构，是随着使用深度不断放大的。一次普通问答有推理成本，长上下文会拉高成本，多轮 Agent 调用会继续叠加成本，图像和视频生成又是更重的一层。再往后，还有带宽、存储、训练和持续迭代。</p>
   <ul><li>推理成本：每一次回答都要算力</li><li>长上下文成本：读得越长，账单越厚</li><li>多轮 Agent 成本：搜索、比较、调用工具、确认支付会多次消耗模型</li><li>多模态成本：图像、视频、语音比普通文本更重</li><li>基础设施成本：带宽、存储、训练和模型迭代持续发生</li></ul>
   <p>这意味着：<strong>用户用得越多，不一定利润越高，反而可能成本增长越快。</strong></p>
-  <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、广告试水和早期 Agent，在保守基准下大约 230 亿（推测的）；同期成本如果按算力折旧/租赁、训练、推理、研发运营和基础设施摊销一起算，大约 1350 亿（推测的）。结果就是：缺口约 1120 亿（推测的），覆盖率约 17%（推算结果）。</p>
-  <p>这里的成本不是豆包 App 的独立财报成本，而是偏“集团 AI 投入口径”的摊算。公开报道中，字节 2026 年 AI 资本开支计划已经是 2000 亿元以上的量级；本文取 1350 亿，是为了呈现豆包相关模型业务可能占用的投入量级，不是公司披露的损益数字。</p>
+  <p>如果把模型业务做一个整体测算，2026 年收入，包括订阅、API、广告试水和早期 Agent，在保守基准下大约 230 亿（推测的）。同期的成本压力，如果把算力折旧/租赁、训练、推理、研发运营和基础设施摊销一起看，中心情景大约 1350 亿（推测的）。</p>
+  <p>这个 1350 亿不是豆包 App 的独立财报成本，而是偏“集团 AI 投入口径”的摊算。本文的推测链条是这样的：</p>
+  <ul><li>先找外部锚点：公开报道中，字节 2026 年 AI 资本开支计划已经是 2000 亿元以上的量级。这个数字不是成本本身，但说明 AI 基础设施投入已经进入千亿级。</li><li>再做业务分摊：不是所有 AI capex 都该算到豆包，但豆包、火山方舟、模型训练、推理服务、多模态和 Agent 基础设施是核心去向。保守按 55%-60% 的资源占用估算，对应约 1100-1200 亿。</li><li>再补非 capex 成本：训练实验、模型迭代、数据处理、安全审核、带宽存储、工程研发和运营等，按 150-250 亿量级估。</li><li>这组假设合计约 1250-1450 亿，中心情景取约 1350 亿；如果把分摊比例和运营成本再放宽，合理敏感区间大约是 1100-1600 亿。它不是精确财报数字。</li></ul>
+  <p>在这个中心情景下，缺口和覆盖率就不是再推测，而是公式：缺口 = 1350 - 230 = 1120 亿；覆盖率 = 230 ÷ 1350 ≈ 17%。如果成本压力只取 1100 亿，覆盖率约 21%；如果取 1600 亿，覆盖率约 14%。不管取哪种情景，结论都一样：模型收入短期很难覆盖模型成本压力。</p>
 
   <h2>03 一个反直觉的结论出现了</h2>
   <p>如果只看这组数字，会得出一个直觉判断：模型业务根本不赚钱。</p>
   <p>但更关键的地方在下一层：收入在变好，缺口反而可能变大。</p>
   <p>原因是，收入增长和成本增长不是同一条曲线。收入是慢变量，要靠产品、付费、广告和抽佣慢慢成熟；成本是快变量，只要调用量、上下文长度、多模态和 Agent 任务上来，就会立刻放大。</p>
-  <p>所以即使未来进入成熟阶段，收入可能到 950 亿（推测的），成本也可能到 2400 亿（推测的）。覆盖率从约 17% 提升到约 40%（推算结果），看起来更好了；但缺口反而从 1120 亿扩大到 1450 亿（推测的）。</p>
+  <p>所以即使未来进入成熟阶段，收入可能到 950 亿（推测的），成本压力也可能到 2400 亿（推测的）。覆盖率从约 17% 提升到约 40%（推算结果），看起来更好了；但缺口反而从 1120 亿扩大到 1450 亿（推测的）。</p>
   <figure class="fig">
-<svg class="f" viewBox="0 0 700 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="收入成本缺口测算：2026 与 2027-2028">
+<svg class="f" viewBox="0 0 700 452" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="收入与成本压力缺口测算：2026 与 2027-2028">
   <text class="fh" x="350" y="32" text-anchor="middle" fill="#1a1a1a">模型账本的核心矛盾：覆盖率变好，绝对缺口仍可能扩大</text>
-  <text class="fxs" x="350" y="56" text-anchor="middle" fill="#6b6b6b">单位：亿元；收入/成本/缺口均为公开信息推算（推测的），非公司披露数据</text>
+  <text class="fxs" x="350" y="56" text-anchor="middle" fill="#6b6b6b">单位：亿元；收入/成本压力/缺口均为公开信息推算（推测的），非公司披露数据</text>
 
   <line x1="78" y1="370" x2="660" y2="370" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="374" text-anchor="end" fill="#999">0</text>
   <line x1="78" y1="306" x2="660" y2="306" stroke="#ededea" stroke-width="1"/><text class="fxs" x="66" y="310" text-anchor="end" fill="#999">500</text>
@@ -126,14 +128,14 @@
 
   <rect x="150" y="340.6" width="160" height="29.4" fill="#1D9E75"/>
   <rect x="150" y="197.2" width="160" height="143.4" fill="#E27D5A"/>
-  <text class="fnum" x="230" y="186" text-anchor="middle" fill="#1a1a1a">总成本 1350</text>
+  <text class="fnum" x="230" y="186" text-anchor="middle" fill="#1a1a1a">成本压力 1350</text>
   <text class="fs" x="230" y="260" text-anchor="middle" fill="#fff">缺口</text>
   <text class="ft" x="230" y="284" text-anchor="middle" fill="#fff">1120</text>
   <text class="fs" x="230" y="358" text-anchor="middle" fill="#fff">收入 230</text>
 
   <rect x="410" y="248.4" width="160" height="121.6" fill="#1D9E75"/>
   <rect x="410" y="62.8" width="160" height="185.6" fill="#E27D5A"/>
-  <text class="fnum" x="490" y="52" text-anchor="middle" fill="#1a1a1a">总成本 2400</text>
+  <text class="fnum" x="490" y="52" text-anchor="middle" fill="#1a1a1a">成本压力 2400</text>
   <text class="fs" x="490" y="145" text-anchor="middle" fill="#fff">缺口</text>
   <text class="ft" x="490" y="168" text-anchor="middle" fill="#fff">1450</text>
   <text class="fs" x="490" y="314" text-anchor="middle" fill="#fff">收入 950</text>
@@ -145,10 +147,10 @@
 
   <rect x="152" y="438" width="13" height="13" rx="3" fill="#1D9E75"/><text class="fxs" x="172" y="448" fill="#555">收入</text>
   <rect x="242" y="438" width="13" height="13" rx="3" fill="#E27D5A"/><text class="fxs" x="262" y="448" fill="#555">缺口 / 仍需集团账本支撑</text>
-</svg><figcaption>图 1　收入 vs 成本缺口图：覆盖率上升，但绝对缺口可能扩大（收入、成本、缺口均为推测的）</figcaption></figure>
+</svg><figcaption>图 1　收入 vs 成本压力缺口图：覆盖率上升，但绝对缺口可能扩大（收入、成本压力、缺口均为推测的）</figcaption></figure>
   <section class="metrics">
-    <section class="metric red"><span>2026 保守基准（推测的）</span><strong>230 亿收入 / 1350 亿成本</strong><em>收入按全量有效变现价 0.3 元测算；缺口=1350-230=1120，覆盖率≈17%。</em></section>
-    <section class="metric red"><span>成熟期测算（推测的）</span><strong>950 亿收入 / 2400 亿成本</strong><em>四条腿合计 950；缺口=2400-950=1450，覆盖率≈40%。</em></section>
+    <section class="metric red"><span>2026 保守基准（推测的）</span><strong>230 亿收入 / 1350 亿成本压力</strong><em>1350 是中心情景；缺口=1350-230=1120，覆盖率≈17%。</em></section>
+    <section class="metric red"><span>成熟期测算（推测的）</span><strong>950 亿收入 / 2400 亿成本压力</strong><em>四条腿合计 950；缺口=2400-950=1450，覆盖率≈40%。</em></section>
   </section>
   <section class="callout red"><p><strong>这就是最反直觉的地方：</strong><br>规模越大，不代表越接近盈利，反而可能更依赖新的商业模式。</p></section>
 
@@ -349,8 +351,8 @@
   <h2>数据口径说明</h2>
   <section class="note">
     <p><strong>1. 有公开论据的事实锚点：</strong><a href="https://www.news.cn/liangzi/20260403/c6079ad4e5d64f58b65a8f2709474752/c.html">新华网 / 科技日报关于火山引擎披露豆包大模型 120 万亿 Token 的报道</a>用于核对 token 规模；<a href="https://www.news.cn/tech/20250611/db9b3c0ef97d49058413563b1c434951/c.html">新华网关于豆包 1.6 输入 0.8 元/百万 token、输出 8 元/百万 token 的报道</a>用于核对 API 标价；<a href="https://www.volcengine.com/docs/82379/1544106?lang=zh">火山方舟模型价格页</a>用于核对官方价格口径；<a href="https://www.scmp.com/tech/article/3352906/bytedance-raises-2026-capex-least-25-amid-ai-boom-rising-memory-costs-sources-say">SCMP 关于字节 2026 AI capex 超 2000 亿元的报道</a>用于核对成本量级背景；<a href="https://www.questmobile.com.cn/research/report/2046482337382842370/">QuestMobile 2026Q1 AI 应用报告</a>用于核对豆包、千问、DeepSeek 月活；<a href="https://www.stdaily.com/web/gdxw/2026-01/15/content_461939.html">科技日报千问接入淘宝、闪购、支付宝报道</a>用于核对交易型 Agent 路径；<a href="https://aipay.alipay.com/">支付宝 AI 付官网</a>用于核对智能体支付能力；<a href="https://openai.com/index/buy-it-in-chatgpt/">OpenAI Instant Checkout / Agentic Commerce Protocol</a>与 <a href="https://stripe.com/newsroom/news/stripe-openai-instant-checkout">Stripe 官方新闻稿</a>用于核对 Agent 交易协议趋势；<a href="https://api-docs.deepseek.com/quick_start/pricing-details-usd">DeepSeek API Pricing</a>用于核对模型价格口径。</p>
-    <p><strong>2. 公式推算 / 推测数据：</strong>0.3 元/百万 token 是全量有效变现价，不是 API 标价；约 131 亿模型调用收入、230 亿总收入、1350 亿成本、950 亿成熟收入、2400 亿成熟成本、1120 亿 / 1450 亿缺口、220 亿 AI 答案广告、160 亿 Agent 抽佣，均属于量级测算或情景推演，不是公司财报。核心公式是：模型调用收入 = token 调用量 ÷ 100 万 × 有效收入单价 × 天数；全量有效变现价 = 实际 API 结算价 × 全量 token 付费化率；覆盖率 = 收入 ÷ 成本；缺口 = 成本 - 收入。特别注意：120 万亿 token 是豆包大模型公开使用量锚点，不等于“全部都是可收费外部 API 调用”。</p>
-    <p><strong>3. 图示口径：</strong>图 1 的收入、成本、缺口为推测的；图 2 的三阶段商业化路径为推测的；图 3 的广告迁移方向是战略判断，其中 220 亿 / 160 亿为推测的；图 4 中千问接入淘宝 / 闪购 / 支付宝属于公开事实，其余玩家路径判断为推测的；图 5 的入口迁移属于趋势判断，为推测的。</p>
+    <p><strong>2. 公式推算 / 推测数据：</strong>0.3 元/百万 token 是全量有效变现价，不是 API 标价；约 131 亿模型调用收入、230 亿总收入、1350 亿成本压力、950 亿成熟收入、2400 亿成熟期成本压力、1120 亿 / 1450 亿缺口、220 亿 AI 答案广告、160 亿 Agent 抽佣，均属于量级测算或情景推演，不是公司财报。核心公式是：模型调用收入 = token 调用量 ÷ 100 万 × 有效收入单价 × 天数；全量有效变现价 = 实际 API 结算价 × 全量 token 付费化率；成本压力 = AI 基础设施资源分摊 + 训练/推理 + 研发运营/带宽存储；覆盖率 = 收入 ÷ 成本压力；缺口 = 成本压力 - 收入。特别注意：120 万亿 token 是豆包大模型公开使用量锚点，不等于“全部都是可收费外部 API 调用”；1350 亿是中心情景，不是公司披露成本。</p>
+    <p><strong>3. 图示口径：</strong>图 1 的收入、成本压力、缺口为推测的；图 2 的三阶段商业化路径为推测的；图 3 的广告迁移方向是战略判断，其中 220 亿 / 160 亿为推测的；图 4 中千问接入淘宝 / 闪购 / 支付宝属于公开事实，其余玩家路径判断为推测的；图 5 的入口迁移属于趋势判断，为推测的。</p>
     <p><strong>4. 阅读方式：</strong>文中“推测的”不是公司披露结果，而是为了说明商业逻辑和量级关系；有公开论据的数据用于做事实锚点，推测数据用于呈现变量关系。</p>
   </section>
   
